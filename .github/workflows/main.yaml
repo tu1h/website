@@ -1,0 +1,35 @@
+name: docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: docs
+      run: |
+        cd ./docs/honkit && npm install npm -g && npm install
+        npx honkit build .  ../../public
+        cd ../../
+    - name: Pushes docs to another gh-pages branch
+      id: push_directory
+      uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
+      env:
+        SSH_DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      with:
+        source-directory: public
+        destination-github-username: 'kubean-io'
+        destination-repository-name: 'website'
+        user-email: kubean-robot@ykubean.io
+        commit-message: See ORIGIN_COMMIT from $GITHUB_REF
+        target-directory: docs
+        target-branch: gh-pages
