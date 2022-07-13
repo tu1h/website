@@ -1,0 +1,874 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <title>集群节点扩容 · 容器管理文档站</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.7.4">
+        <meta name="author" content="Michael">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="delete.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../00Releases/">
+            
+                <a href="../../00Releases/">
+            
+                    
+                    Release Notes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../00Releases/0.1.html">
+            
+                <a href="../../00Releases/0.1.html">
+            
+                    
+                    Release 0.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../01Intro/">
+            
+                <a href="../../01Intro/">
+            
+                    
+                    产品介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../01Intro/features.html">
+            
+                <a href="../../01Intro/features.html">
+            
+                    
+                    功能总览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../01Intro/scenarios.html">
+            
+                <a href="../../01Intro/scenarios.html">
+            
+                    
+                    适用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../01Intro/terms.html">
+            
+                <a href="../../01Intro/terms.html">
+            
+                    
+                    常见术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../02install/">
+            
+                <a href="../../02install/">
+            
+                    
+                    准备及集群创建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../02install/checkbefore.html">
+            
+                <a href="../../02install/checkbefore.html">
+            
+                    
+                    集群创建前准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../02install/install.html">
+            
+                <a href="../../02install/install.html">
+            
+                    
+                    安装步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../02install/checkafter.html">
+            
+                <a href="../../02install/checkafter.html">
+            
+                    
+                    安装后检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    用户指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../clusters/">
+            
+                <a href="../clusters/">
+            
+                    
+                    集群管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1.1" data-path="../clusters/description.html">
+            
+                <a href="../clusters/description.html">
+            
+                    
+                    集群说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.1.2" data-path="../clusters/create.html">
+            
+                <a href="../clusters/create.html">
+            
+                    
+                    创建集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.1.3" data-path="../clusters/upgrade.html">
+            
+                <a href="../clusters/upgrade.html">
+            
+                    
+                    升级集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.1.4" data-path="../clusters/extend.html">
+            
+                <a href="../clusters/extend.html">
+            
+                    
+                    扩展集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.1.5" data-path="../clusters/delete.html">
+            
+                <a href="../clusters/delete.html">
+            
+                    
+                    删除集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.1.6" data-path="../clusters/cloudshell.html">
+            
+                <a href="../clusters/cloudshell.html">
+            
+                    
+                    通过 CloudShell 访问集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.1.7" data-path="../clusters/updatecert.html">
+            
+                <a href="../clusters/updatecert.html">
+            
+                    
+                    更新集群证书
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    节点管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.4.2.1" data-path="create.html">
+            
+                <a href="create.html">
+            
+                    
+                    集群节点扩容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.2" data-path="delete.html">
+            
+                <a href="delete.html">
+            
+                    
+                    集群节点缩容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.3" data-path="taints.html">
+            
+                <a href="taints.html">
+            
+                    
+                    节点污点管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.4" data-path="labels.html">
+            
+                <a href="labels.html">
+            
+                    
+                    节点标签管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../components/">
+            
+                <a href="../components/">
+            
+                    
+                    支持的组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.3.1" data-path="../components/cri.html">
+            
+                <a href="../components/cri.html">
+            
+                    
+                    运行时插件 CRI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.2" data-path="../components/network.html">
+            
+                <a href="../components/network.html">
+            
+                    
+                    网络插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../ha.html">
+            
+                <a href="../ha.html">
+            
+                    
+                    集群组件高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="../log.html">
+            
+                <a href="../log.html">
+            
+                    
+                    安装/运维日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="../audit.html">
+            
+                <a href="../audit.html">
+            
+                    
+                    审计日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../04API/">
+            
+                <a href="../../04API/">
+            
+                    
+                    API 文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../05FAQs/">
+            
+                <a href="../../05FAQs/">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../06Troubleshooting/">
+            
+                <a href="../../06Troubleshooting/">
+            
+                    
+                    故障排查
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本書使用 HonKit 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >集群节点扩容</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#集群节点扩容（基于-kubespray）"><b></b>集群节点扩容（基于 KubeSpray）</a></li><ul><li><span class="title-icon "></span><a href="#前提条件"><b></b>前提条件</a></li><li><span class="title-icon "></span><a href="#添加节点操作步骤"><b></b>添加节点操作步骤</a></li><ul><li><span class="title-icon "></span><a href="#1-登录平台"><b></b>1. 登录平台</a></li><li><span class="title-icon "></span><a href="#2-节点添加"><b></b>2. 节点添加</a></li></ul></ul></ul></div><a href="#集群节点扩容（基于-kubespray）" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="集群节点扩容（基于-kubespray）"><a name="集群节点扩容（基于-kubespray）" class="anchor-navigation-ex-anchor" href="#集群节点扩容（基于-kubespray）"><i class="fa fa-link" aria-hidden="true"></i></a><a name="集群节点扩容（基于-kubespray）" class="plugin-anchor" href="#集群节点扩容（基于-kubespray）"><i class="fa fa-link" aria-hidden="true"></i></a>集群节点扩容（基于 KubeSpray）</h1>
+<p>随着业务应用不断增长，当集群资源随着业务规模的扩大造成资源紧张时，您可以对集群节点进行扩容，扩容后，应用可运行在新增节点上。</p>
+<p>以下介绍如何进行集群节点扩容。</p>
+<p>注意：</p>
+<ol>
+<li>可批量添加 控制器节点/工作节点，不可同时进行 控制器节点和 工作节点混合添加。</li>
+<li>基于 Kubespray 的 Etcd 和 Controller 部署在相同节点上，扩缩容节点时， Controller 和 ETCD 同时进行。</li>
+<li><p>Controller 添加时，请确保 Controller 节点数为基数，以防发生脑裂问题。</p>
+</li>
+<li><p>集群节点缩容时不可下线 <strong>第一个控制器</strong> 节点，如必须进行此操作，请联系售后工程师。</p>
+</li>
+</ol>
+<h2 id="前提条件"><a name="前提条件" class="anchor-navigation-ex-anchor" href="#前提条件"><i class="fa fa-link" aria-hidden="true"></i></a><a name="前提条件" class="plugin-anchor" href="#前提条件"><i class="fa fa-link" aria-hidden="true"></i></a>前提条件</h2>
+<ul>
+<li><p>容器管理平台<a href="https://ndx.gitpages.daocloud.io/engineering/kpanda/zh/07UserGuide/Workloads/CreateDeploymentByImage.html" target="_blank">已创建 Kubernetes 集群</a>，且能够访问集群的 UI 界面。</p>
+</li>
+<li><p>操作用户已授权为 <code>Cluster Admin</code> 角色 ，详情可参考<a href="https://ndx.gitpages.daocloud.io/engineering/kpanda/zh/07UserGuide/Workloads/CreateDeploymentByImage.html" target="_blank">集群授权</a>。</p>
+</li>
+</ul>
+<h2 id="添加节点操作步骤"><a name="添加节点操作步骤" class="anchor-navigation-ex-anchor" href="#添加节点操作步骤"><i class="fa fa-link" aria-hidden="true"></i></a><a name="添加节点操作步骤" class="plugin-anchor" href="#添加节点操作步骤"><i class="fa fa-link" aria-hidden="true"></i></a>添加节点操作步骤</h2>
+<h3 id="1-登录平台"><a name="1-登录平台" class="anchor-navigation-ex-anchor" href="#1-登录平台"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1-登录平台" class="plugin-anchor" href="#1-登录平台"><i class="fa fa-link" aria-hidden="true"></i></a>1. 登录平台</h3>
+<p><code>Cluster Admin</code> 用户根据下表的信息成功登录后，点击左上角的<code>集群列表</code>进入<code>集群列表</code>页面。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">举例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">UI 账户和密码</td>
+<td style="text-align:left">【类型】必填 【含义】用来登录容器管理平台 Web UI 的管理员账户和密码</td>
+<td style="text-align:left">账户：root 密码：<strong><em>\</em></strong></td>
+</tr>
+<tr>
+<td style="text-align:left">容器平台的 Web UI 地址</td>
+<td style="text-align:left">【类型】必填 【含义】容器管理平台的 Web UI 的 IP 地址</td>
+<td style="text-align:left">10.6.124.110</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-节点添加"><a name="2-节点添加" class="anchor-navigation-ex-anchor" href="#2-节点添加"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2-节点添加" class="plugin-anchor" href="#2-节点添加"><i class="fa fa-link" aria-hidden="true"></i></a>2. 节点添加</h3>
+<ol>
+<li><p>点击一个集群名称，进入<code>集群详情</code>。</p>
+</li>
+<li><p>点击左侧的<code>节点管理</code>进入节点列表。</p>
+</li>
+<li><p>点击右上角<code>加入节点</code></p>
+</li>
+<li><p>按钮，进入节点添加页面。</p>
+<p><img src="../../Users/daiqiuping/Library/Application Support/typora-user-images/image-20220623101238409.png" alt="image-20220623101238409"></p>
+</li>
+<li><p>进入节点添加页面，选择”角色类型“，并输入节点名称，节点 IP 信息，可批量输入，请确保输入的 Hostname 和 IP 地址没有冲突。</p>
+<p>| 参数     | 说明                                                         | 举例值       |
+| :------- | :----------------------------------------------------------- | :----------- |
+| 角色类型 | 【类型】必填 <br>【含义】选择添加节点的角色类型，可添加角色有”控制器节点“、”工作节点“，可批量添加相同角色节点<br>如添加控制器节点，默认添加节点上会启用一个 ETCD | 工作节点     |
+| 节点名称 | 【类型】必填 <br>【含义】节点的 Hostname ，输入前请确认 Hostname 的正确性 | Node01       |
+| IP 地址  | 【类型】必填 <br>【含义】节点的 IP 地址                    | 10.6.124.110 |</p>
+<ol>
+<li><p>输入上述信息后，点击 <code>验证</code>后开始进行节点检测，主要检测项如下：</p>
+<ol>
+<li>IP 联通性，自动检测 节点 IP 是否联通</li>
+<li>HostName 一致性，检测输入的 HostName 同节点配置的是一致的</li>
+<li>OS 兼容性，检测节点的 OS 是否同安装的 k8s 版本是否兼容</li>
+<li>NTP 时间同步，检测节点事件同 NTP 时间是否同步</li>
+</ol>
+</li>
+<li><p>如上述检测项都已通过，节点会自动添加至集群，整个添加过程约 20 分钟，请耐心等待，如需要查看具体 节点添加过程及日志，请查看 <a href>Recently Operations</a></p>
+</li>
+</ol>
+</li>
+</ol>
+<footer class="page-footer"><span class="copyright">Copyright © daocloud.io 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2022-07-13 03:45:14
+</span></footer></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 节点管理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="delete.html" class="navigation navigation-next " aria-label="Next page: 集群节点缩容">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"集群节点扩容","level":"2.4.2.1","depth":3,"next":{"title":"集群节点缩容","level":"2.4.2.2","depth":3,"path":"03userguide/nodes/delete.md","ref":"03userguide/nodes/delete.md","articles":[]},"previous":{"title":"节点管理","level":"2.4.2","depth":2,"path":"03userguide/nodes/README.md","ref":"03userguide/nodes/README.md","articles":[{"title":"集群节点扩容","level":"2.4.2.1","depth":3,"path":"03userguide/nodes/create.md","ref":"03userguide/nodes/create.md","articles":[]},{"title":"集群节点缩容","level":"2.4.2.2","depth":3,"path":"03userguide/nodes/delete.md","ref":"03userguide/nodes/delete.md","articles":[]},{"title":"节点污点管理","level":"2.4.2.3","depth":3,"path":"03userguide/nodes/taints.md","ref":"03userguide/nodes/taints.md","articles":[]},{"title":"节点标签管理","level":"2.4.2.4","depth":3,"path":"03userguide/nodes/labels.md","ref":"03userguide/nodes/labels.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"zh","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"03userguide/nodes/create.md","mtime":"2022-07-13T03:45:14.594Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-13T03:45:30.374Z"},"basePath":"../..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
