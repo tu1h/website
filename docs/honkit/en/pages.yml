@@ -1,0 +1,36 @@
+site_name: kubean
+docs_dir: ./
+nav:
+- Release Notes: 
+  - Release 0.0.6: 00Releases/0.1.md
+- Introduction: 
+  - Features: 01Intro/features.md
+  - Applicable Scenarios: 01Intro/scenarios.md
+  - Terms: 01Intro/terms.md
+- Get Started: 
+  - Pre-install Preparation: 02install/checkbefore.md
+  - How to Install: 02install/install.md
+  - Post-install Check: 02install/checkafter.md
+- Cluster Management: 
+  - Notes: 03userguide/clusters/description.md
+  - Create Standard Cluster: 03userguide/clusters/create-standard.md
+  - Create Resilient Cluster: 03userguide/clusters/create-resilient.md
+  - Upgrade Cluster: 03userguide/clusters/upgrade.md
+  - Extend Cluster: 03userguide/clusters/extend.md
+  - Remove Cluster: 03userguide/clusters/delete.md
+  - Access by CloudShell: 03userguide/clusters/cloudshell.md
+  - Upgrade Certificate: 03userguide/clusters/updatecert.md
+- Node Management: 
+  - Add Node: 03userguide/nodes/create.md
+  - Remove Node: 03userguide/nodes/delete.md
+  - Node Taint: 03userguide/nodes/taints.md
+  - Node Label: 03userguide/nodes/labels.md
+- Interface Management: 
+  - CRI: 03userguide/components/cri.md
+  - Network Interface: 03userguide/components/network.md
+- Component Availability: 03userguide/availability.md
+- Log Management: 03userguide/log.md
+- Audit: 03userguide/audit.md
+- API Documentation: 04API/README.md
+- FAQ: 05FAQs/README.md
+- Troubleshooting: 06Troubleshooting/README.md
