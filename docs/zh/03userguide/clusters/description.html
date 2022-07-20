@@ -6,7 +6,7 @@
         <title>集群说明 · 容器管理文档站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 3.7.4">
+        <meta name="generator" content="HonKit 3.7.5">
         <meta name="author" content="Michael">
         
         
@@ -88,7 +88,7 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="create.html" />
+    <link rel="next" href="create-standard.html" />
     
     
     <link rel="prev" href="./" />
@@ -154,12 +154,25 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="../../00Releases/0.1.html">
+        <li class="chapter " data-level="2.1.1" data-path="../../00Releases/0.0.8.html">
             
-                <a href="../../00Releases/0.1.html">
+                <a href="../../00Releases/0.0.8.html">
             
                     
-                    Release 0.1
+                    Release 0.0.8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../00Releases/0.0.6.html">
+            
+                <a href="../../00Releases/0.0.6.html">
+            
+                    
+                    Release 0.0.6
             
                 </a>
             
@@ -249,7 +262,7 @@
                 <a href="../../02install/checkbefore.html">
             
                     
-                    集群创建前准备
+                    创建前准备
             
                 </a>
             
@@ -262,7 +275,7 @@
                 <a href="../../02install/install.html">
             
                     
-                    安装步骤
+                    创建步骤
             
                 </a>
             
@@ -275,7 +288,7 @@
                 <a href="../../02install/checkafter.html">
             
                     
-                    安装后检查
+                    创建后检查
             
                 </a>
             
@@ -329,12 +342,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.2" data-path="create.html">
+        <li class="chapter " data-level="2.4.1.2" data-path="create-standard.html">
             
-                <a href="create.html">
+                <a href="create-standard.html">
             
                     
-                    创建集群
+                    创建标准集群
             
                 </a>
             
@@ -342,7 +355,20 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.3" data-path="upgrade.html">
+        <li class="chapter " data-level="2.4.1.3" data-path="create-resilient.html">
+            
+                <a href="create-resilient.html">
+            
+                    
+                    创建高弹性集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.1.4" data-path="upgrade.html">
             
                 <a href="upgrade.html">
             
@@ -355,7 +381,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.4" data-path="extend.html">
+        <li class="chapter " data-level="2.4.1.5" data-path="extend.html">
             
                 <a href="extend.html">
             
@@ -368,7 +394,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.5" data-path="delete.html">
+        <li class="chapter " data-level="2.4.1.6" data-path="delete.html">
             
                 <a href="delete.html">
             
@@ -381,7 +407,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.6" data-path="cloudshell.html">
+        <li class="chapter " data-level="2.4.1.7" data-path="cloudshell.html">
             
                 <a href="cloudshell.html">
             
@@ -394,7 +420,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.7" data-path="updatecert.html">
+        <li class="chapter " data-level="2.4.1.8" data-path="updatecert.html">
             
                 <a href="updatecert.html">
             
@@ -488,7 +514,7 @@
                 <a href="../components/">
             
                     
-                    支持的组件
+                    插件中心
             
                 </a>
             
@@ -528,9 +554,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.4" data-path="../ha.html">
+        <li class="chapter " data-level="2.4.4" data-path="../availability.html">
             
-                <a href="../ha.html">
+                <a href="../availability.html">
             
                     
                     集群组件高可用
@@ -656,10 +682,263 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#集群说明"><b></b>集群说明</a></li></ul></div><a href="#集群说明" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="集群说明"><a name="集群说明" class="anchor-navigation-ex-anchor" href="#集群说明"><i class="fa fa-link" aria-hidden="true"></i></a><a name="集群说明" class="plugin-anchor" href="#集群说明"><i class="fa fa-link" aria-hidden="true"></i></a>集群说明</h1>
-<p>本节介绍一些基本的集群信息，例如集群参数等。 </p>
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#集群参数说明"><b></b>集群参数说明</a></li><ul><li><span class="title-icon "></span><a href="#基本信息"><b></b>基本信息</a></li><li><span class="title-icon "></span><a href="#节点配置"><b></b>节点配置</a></li><li><span class="title-icon "></span><a href="#网络配置"><b></b>网络配置</a></li><li><span class="title-icon "></span><a href="#插件配置"><b></b>插件配置</a></li><li><span class="title-icon "></span><a href="#高级配置"><b></b>高级配置</a></li></ul></ul></div><a href="#集群参数说明" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="集群参数说明"><a name="集群参数说明" class="anchor-navigation-ex-anchor" href="#集群参数说明"><i class="fa fa-link" aria-hidden="true"></i></a><a name="集群参数说明" class="plugin-anchor" href="#集群参数说明"><i class="fa fa-link" aria-hidden="true"></i></a>集群参数说明</h1>
+<p>本节介绍创建集群时需要填写的相关参数。</p>
+<h2 id="基本信息"><a name="基本信息" class="anchor-navigation-ex-anchor" href="#基本信息"><i class="fa fa-link" aria-hidden="true"></i></a><a name="基本信息" class="plugin-anchor" href="#基本信息"><i class="fa fa-link" aria-hidden="true"></i></a>基本信息</h2>
+<p>基本信息模块主要用来配置集群的名称、Kubernetes 版本等相关信息。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">举例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">集群名称</td>
+<td style="text-align:left">【类型】必填<br>【含义】新建集群的名称。<br>【注意】集群名称不可重复。名称长度为 4—63 个字符，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。</td>
+<td style="text-align:left">kpanda-00001</td>
+</tr>
+<tr>
+<td style="text-align:left">集群别名</td>
+<td style="text-align:left">【类型】选填<br>【含义】用户自定义的名称。<br>【注意】别名长度为 4—63 个字符，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。</td>
+<td style="text-align:left">my-kpanda</td>
+</tr>
+<tr>
+<td style="text-align:left">被纳管</td>
+<td style="text-align:left">【类型】必填<br>【含义】当前新建的集群将基于被纳管集群创建，创建执行的日志可在被纳管集群的<a href="#operation">操作列表内查阅</a>。</td>
+<td style="text-align:left">father-kpanda</td>
+</tr>
+<tr>
+<td style="text-align:left">容器运行时</td>
+<td style="text-align:left">【类型】必填<br>【含义】默认使用 containerd 运行时。有关 Docker 运行时、Kata 运行时、Gvisior 运行时的区别请参阅<a href="#">如何选择运行时及版本</a>。</td>
+<td style="text-align:left">containerd</td>
+</tr>
+<tr>
+<td style="text-align:left">容器运行时版本</td>
+<td style="text-align:left">【类型】必填<br>【含义】容器运行时的版本。不同版本之间可能存在部分差异，推荐使用系统默认版本。</td>
+<td style="text-align:left">1.6.4</td>
+</tr>
+<tr>
+<td style="text-align:left">Kubernetes 版本</td>
+<td style="text-align:left">【类型】必填<br>【含义】新建集群的 Kubernetes 的版本。不同版本之间可能存在部分差异，推荐使用系统默认版本。</td>
+<td style="text-align:left">1.24.2</td>
+</tr>
+<tr>
+<td style="text-align:left">标签</td>
+<td style="text-align:left">【类型】选填<br>【含义】为集群添加标签。</td>
+<td style="text-align:left">key: value</td>
+</tr>
+<tr>
+<td style="text-align:left">注解</td>
+<td style="text-align:left">【类型】选填<br>【含义】为集群添加注解。</td>
+<td style="text-align:left">key: value</td>
+</tr>
+<tr>
+<td style="text-align:left">描述</td>
+<td style="text-align:left">【类型】选填<br>【含义】为集群添加描述信息。</td>
+<td style="text-align:left">这是一个描述</td>
+</tr>
+</tbody>
+</table>
+<h2 id="节点配置"><a name="节点配置" class="anchor-navigation-ex-anchor" href="#节点配置"><i class="fa fa-link" aria-hidden="true"></i></a><a name="节点配置" class="plugin-anchor" href="#节点配置"><i class="fa fa-link" aria-hidden="true"></i></a>节点配置</h2>
+<p>配置节点信息之前，需要预先将所有节点登录验证的秘钥或用户名/密码设为一致。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">举例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>添加节点</td>
+<td style="text-align:left">【类型】必填<br>【含义】为集群添加节点。</td>
+<td style="text-align:left">添加</td>
+</tr>
+<tr>
+<td>添加节点-主机名</td>
+<td style="text-align:left">【类型】必填<br>【含义】待添加节点的名称<br>【注意】主机名长度为 4—63 个字符，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。</td>
+<td style="text-align:left">host-01</td>
+</tr>
+<tr>
+<td>添加节点-IP 地址</td>
+<td style="text-align:left">【类型】选填<br>【含义】输入节点的 IP 地址，用于连接和访问节点。</td>
+<td style="text-align:left">172.12.23</td>
+</tr>
+<tr>
+<td>添加节点-角色</td>
+<td style="text-align:left">【类型】选填<br>【含义】选择节点的角色，分为 master、和 worker 两种。</td>
+<td style="text-align:left">master</td>
+</tr>
+<tr>
+<td>SSH 身份认证</td>
+<td style="text-align:left">【类型】必填<br>【含义】待添加节点远程连接时统一身份认证方式，支持秘钥和用户名密码两种类型。</td>
+<td style="text-align:left">秘钥</td>
+</tr>
+<tr>
+<td>NTP 配置</td>
+<td style="text-align:left">【类型】选填<br>【含义】是否开启时间同步，默认开启。</td>
+<td style="text-align:left">开启</td>
+</tr>
+<tr>
+<td>NTP 服务器</td>
+<td style="text-align:left">【类型】选填<br>【含义】时间同步的服务器的类型，可根据使用习惯和业务场景进行选择。</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="网络配置"><a name="网络配置" class="anchor-navigation-ex-anchor" href="#网络配置"><i class="fa fa-link" aria-hidden="true"></i></a><a name="网络配置" class="plugin-anchor" href="#网络配置"><i class="fa fa-link" aria-hidden="true"></i></a>网络配置</h2>
+<p>Kubean 提供了支持多种主流的网络模式，可以根据业务需要进行选择。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">举例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">网络插件</td>
+<td style="text-align:left">【类型】必选<br>【含义】选择网络插件，默认为 Calico。有关不同网络插件的区别请参阅<a href="#">如何选择网络插件</a>。<br>【注意】集群创建完成后不可更改。</td>
+<td style="text-align:left">Calico</td>
+</tr>
+<tr>
+<td style="text-align:left">Pod CIDR</td>
+<td style="text-align:left">【类型】可选<br>【含义】Pod IP 地址范围。<br>【注意】集群创建完成后不可更改。Pod 地址段和 Service 地址段不可重复。更多详情，请参阅 <a href="#">Kubernetes 集群网络规划</a>。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Service CIDR</td>
+<td style="text-align:left">【类型】必选<br>【含义】集群 IP 地址范围。<br>【注意】集群创建完成后不可更改。Pod 地址段和 Service 地址段不可重复。更多详情，请参阅 <a href="#">Kubernetes 集群网络规划</a>。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">DNS 配置</td>
+<td style="text-align:left">【类型】可选<br>【含义】开启或关闭本地 DNS 域名解析。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">网络模式</td>
+<td style="text-align:left">【类型】可选<br>【含义】Kubernetes 底层网络模式，默认为 iptables。更多详情，请参阅 <a href="#">Kubernetes 网络模式</a>。</td>
+<td style="text-align:left">--</td>
+</tr>
+<tr>
+<td style="text-align:left">虚拟负载均衡器</td>
+<td style="text-align:left">【类型】可选<br>【含义】选择是否开启用于控制平面和 Kubernetes 服务的 Kubernetes 虚拟 IP 和负载均衡器。<br>【注意】环境需要支持 ARP 发现，如物理机，虚拟化。</td>
+<td style="text-align:left">--</td>
+</tr>
+<tr>
+<td style="text-align:left">虚拟负载均衡器地址</td>
+<td style="text-align:left">【类型】可选<br>【含义】虚拟负载均衡器的 IP 地址。<br>【注意】必须启用虚拟负载均衡器，才能编辑此字段。</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="插件配置"><a name="插件配置" class="anchor-navigation-ex-anchor" href="#插件配置"><i class="fa fa-link" aria-hidden="true"></i></a><a name="插件配置" class="plugin-anchor" href="#插件配置"><i class="fa fa-link" aria-hidden="true"></i></a>插件配置</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">举例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">必备插件</td>
+<td style="text-align:left">【类型】必选<br>【含义】系统默认安装的插件。</td>
+<td style="text-align:left">Insight Agent</td>
+</tr>
+<tr>
+<td style="text-align:left">Insight Agent</td>
+<td style="text-align:left">【类型】必选<br>【含义】用于获取集群监控相关的参数。</td>
+<td style="text-align:left">--</td>
+</tr>
+<tr>
+<td style="text-align:left">可选插件</td>
+<td style="text-align:left">【类型】可选<br>【含义】用于获取集群监控相关的参数。更多详情，请参阅<a href="#">插件配置</a>。</td>
+<td style="text-align:left">Ingress</td>
+</tr>
+</tbody>
+</table>
+<h2 id="高级配置"><a name="高级配置" class="anchor-navigation-ex-anchor" href="#高级配置"><i class="fa fa-link" aria-hidden="true"></i></a><a name="高级配置" class="plugin-anchor" href="#高级配置"><i class="fa fa-link" aria-hidden="true"></i></a>高级配置</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">举例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">最大 pod 数</td>
+<td style="text-align:left">【类型】可选<br>【含义】指定 pod 数量的上限。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">主机标识</td>
+<td style="text-align:left">【类型】可选<br>【含义】当节点 IP 地址不为空时，使用此字段的输入值来标识主机，而不用实际的主机名来标识主机。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">containerd 镜像仓库</td>
+<td style="text-align:left">【类型】可选<br>【含义】如果使用在线安装模式，则不需要配置，使用默认值即可。如果使用离线安装模式，则需要输入主机、地址等参数。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Docker 镜像仓库</td>
+<td style="text-align:left">【类型】可选<br>【含义】如果使用在线安装不需要配置，使用默认即可，如果为默认安装，您需要输入主机地址等参数。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">审计日志</td>
+<td style="text-align:left">【类型】可选<br>【含义】选择是否开启 Kubernetes 审计日志，默认开启。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">控制平面证书更新</td>
+<td style="text-align:left">【类型】可选<br>【含义】选择是否在每个月的第一个星期一自动更新 Kubernetes 控制平面证书。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">防火墙</td>
+<td style="text-align:left">【类型】可选<br>【含义】是否关闭防火墙，默认关闭。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">kubelet 状态更新频率</td>
+<td style="text-align:left">【类型】可选<br>【含义】设置 kubelet 状态的更新频率，推荐采用默认设置。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">控制器节点监控宽限期</td>
+<td style="text-align:left">【类型】可选<br>【含义】设置控制器节点的监控宽限期，推荐采用默认设置。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">控制器节点监控周期</td>
+<td style="text-align:left">【类型】可选<br>【含义】设置控制器节点的监控周期，推荐采用默认设置。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">kube-apiserver pod 容忍时间</td>
+<td style="text-align:left">【类型】可选<br>【含义】设置 kube-apiserver pod 就绪之前允许的超时时间，推荐采用默认设置。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">kube-apiserver pod 无法连接的容忍时间</td>
+<td style="text-align:left">【类型】可选<br>【含义】设置 kube-apiserver pod 无法连接时的容忍时间，推荐采用默认设置。</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
 <footer class="page-footer"><span class="copyright">Copyright © daocloud.io 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2022-07-13 03:48:52
+2022-07-20 02:55:20
 </span></footer></body></html>
                                 
                                 </section>
@@ -692,7 +971,7 @@
                 </a>
                 
                 
-                <a href="create.html" class="navigation navigation-next " aria-label="Next page: 创建集群">
+                <a href="create-standard.html" class="navigation navigation-next " aria-label="Next page: 创建标准集群">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -703,7 +982,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"集群说明","level":"2.4.1.1","depth":3,"next":{"title":"创建集群","level":"2.4.1.2","depth":3,"path":"03userguide/clusters/create.md","ref":"03userguide/clusters/create.md","articles":[]},"previous":{"title":"集群管理","level":"2.4.1","depth":2,"path":"03userguide/clusters/README.md","ref":"03userguide/clusters/README.md","articles":[{"title":"集群说明","level":"2.4.1.1","depth":3,"path":"03userguide/clusters/description.md","ref":"03userguide/clusters/description.md","articles":[]},{"title":"创建集群","level":"2.4.1.2","depth":3,"path":"03userguide/clusters/create.md","ref":"03userguide/clusters/create.md","articles":[]},{"title":"升级集群","level":"2.4.1.3","depth":3,"path":"03userguide/clusters/upgrade.md","ref":"03userguide/clusters/upgrade.md","articles":[]},{"title":"扩展集群","level":"2.4.1.4","depth":3,"path":"03userguide/clusters/extend.md","ref":"03userguide/clusters/extend.md","articles":[]},{"title":"删除集群","level":"2.4.1.5","depth":3,"path":"03userguide/clusters/delete.md","ref":"03userguide/clusters/delete.md","articles":[]},{"title":"通过 CloudShell 访问集群","level":"2.4.1.6","depth":3,"path":"03userguide/clusters/cloudshell.md","ref":"03userguide/clusters/cloudshell.md","articles":[]},{"title":"更新集群证书","level":"2.4.1.7","depth":3,"path":"03userguide/clusters/updatecert.md","ref":"03userguide/clusters/updatecert.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"zh","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"03userguide/clusters/description.md","mtime":"2022-07-13T03:48:52.617Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-13T03:49:15.693Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"集群说明","level":"2.4.1.1","depth":3,"next":{"title":"创建标准集群","level":"2.4.1.2","depth":3,"path":"03userguide/clusters/create-standard.md","ref":"03userguide/clusters/create-standard.md","articles":[]},"previous":{"title":"集群管理","level":"2.4.1","depth":2,"path":"03userguide/clusters/README.md","ref":"03userguide/clusters/README.md","articles":[{"title":"集群说明","level":"2.4.1.1","depth":3,"path":"03userguide/clusters/description.md","ref":"03userguide/clusters/description.md","articles":[]},{"title":"创建标准集群","level":"2.4.1.2","depth":3,"path":"03userguide/clusters/create-standard.md","ref":"03userguide/clusters/create-standard.md","articles":[]},{"title":"创建高弹性集群","level":"2.4.1.3","depth":3,"path":"03userguide/clusters/create-resilient.md","ref":"03userguide/clusters/create-resilient.md","articles":[]},{"title":"升级集群","level":"2.4.1.4","depth":3,"path":"03userguide/clusters/upgrade.md","ref":"03userguide/clusters/upgrade.md","articles":[]},{"title":"扩展集群","level":"2.4.1.5","depth":3,"path":"03userguide/clusters/extend.md","ref":"03userguide/clusters/extend.md","articles":[]},{"title":"删除集群","level":"2.4.1.6","depth":3,"path":"03userguide/clusters/delete.md","ref":"03userguide/clusters/delete.md","articles":[]},{"title":"通过 CloudShell 访问集群","level":"2.4.1.7","depth":3,"path":"03userguide/clusters/cloudshell.md","ref":"03userguide/clusters/cloudshell.md","articles":[]},{"title":"更新集群证书","level":"2.4.1.8","depth":3,"path":"03userguide/clusters/updatecert.md","ref":"03userguide/clusters/updatecert.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"zh","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"03userguide/clusters/description.md","mtime":"2022-07-20T02:55:20.630Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-07-20T02:55:42.052Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>

@@ -6,7 +6,7 @@
         <title>集群节点扩容 · 容器管理文档站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 3.7.4">
+        <meta name="generator" content="HonKit 3.7.5">
         <meta name="author" content="Michael">
         
         
@@ -154,12 +154,25 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="../../00Releases/0.1.html">
+        <li class="chapter " data-level="2.1.1" data-path="../../00Releases/0.0.8.html">
             
-                <a href="../../00Releases/0.1.html">
+                <a href="../../00Releases/0.0.8.html">
             
                     
-                    Release 0.1
+                    Release 0.0.8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../00Releases/0.0.6.html">
+            
+                <a href="../../00Releases/0.0.6.html">
+            
+                    
+                    Release 0.0.6
             
                 </a>
             
@@ -249,7 +262,7 @@
                 <a href="../../02install/checkbefore.html">
             
                     
-                    集群创建前准备
+                    创建前准备
             
                 </a>
             
@@ -262,7 +275,7 @@
                 <a href="../../02install/install.html">
             
                     
-                    安装步骤
+                    创建步骤
             
                 </a>
             
@@ -275,7 +288,7 @@
                 <a href="../../02install/checkafter.html">
             
                     
-                    安装后检查
+                    创建后检查
             
                 </a>
             
@@ -329,12 +342,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.2" data-path="../clusters/create.html">
+        <li class="chapter " data-level="2.4.1.2" data-path="../clusters/create-standard.html">
             
-                <a href="../clusters/create.html">
+                <a href="../clusters/create-standard.html">
             
                     
-                    创建集群
+                    创建标准集群
             
                 </a>
             
@@ -342,7 +355,20 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.3" data-path="../clusters/upgrade.html">
+        <li class="chapter " data-level="2.4.1.3" data-path="../clusters/create-resilient.html">
+            
+                <a href="../clusters/create-resilient.html">
+            
+                    
+                    创建高弹性集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.1.4" data-path="../clusters/upgrade.html">
             
                 <a href="../clusters/upgrade.html">
             
@@ -355,7 +381,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.4" data-path="../clusters/extend.html">
+        <li class="chapter " data-level="2.4.1.5" data-path="../clusters/extend.html">
             
                 <a href="../clusters/extend.html">
             
@@ -368,7 +394,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.5" data-path="../clusters/delete.html">
+        <li class="chapter " data-level="2.4.1.6" data-path="../clusters/delete.html">
             
                 <a href="../clusters/delete.html">
             
@@ -381,7 +407,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.6" data-path="../clusters/cloudshell.html">
+        <li class="chapter " data-level="2.4.1.7" data-path="../clusters/cloudshell.html">
             
                 <a href="../clusters/cloudshell.html">
             
@@ -394,7 +420,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.7" data-path="../clusters/updatecert.html">
+        <li class="chapter " data-level="2.4.1.8" data-path="../clusters/updatecert.html">
             
                 <a href="../clusters/updatecert.html">
             
@@ -488,7 +514,7 @@
                 <a href="../components/">
             
                     
-                    支持的组件
+                    插件中心
             
                 </a>
             
@@ -528,9 +554,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.4" data-path="../ha.html">
+        <li class="chapter " data-level="2.4.4" data-path="../availability.html">
             
-                <a href="../ha.html">
+                <a href="../availability.html">
             
                     
                     集群组件高可用
@@ -656,27 +682,17 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#集群节点扩容（基于-kubespray）"><b></b>集群节点扩容（基于 KubeSpray）</a></li><ul><li><span class="title-icon "></span><a href="#前提条件"><b></b>前提条件</a></li><li><span class="title-icon "></span><a href="#添加节点操作步骤"><b></b>添加节点操作步骤</a></li><ul><li><span class="title-icon "></span><a href="#1-登录平台"><b></b>1. 登录平台</a></li><li><span class="title-icon "></span><a href="#2-节点添加"><b></b>2. 节点添加</a></li></ul></ul></ul></div><a href="#集群节点扩容（基于-kubespray）" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="集群节点扩容（基于-kubespray）"><a name="集群节点扩容（基于-kubespray）" class="anchor-navigation-ex-anchor" href="#集群节点扩容（基于-kubespray）"><i class="fa fa-link" aria-hidden="true"></i></a><a name="集群节点扩容（基于-kubespray）" class="plugin-anchor" href="#集群节点扩容（基于-kubespray）"><i class="fa fa-link" aria-hidden="true"></i></a>集群节点扩容（基于 KubeSpray）</h1>
-<p>随着业务应用不断增长，当集群资源随着业务规模的扩大造成资源紧张时，您可以对集群节点进行扩容，扩容后，应用可运行在新增节点上。</p>
-<p>以下介绍如何进行集群节点扩容。</p>
-<p>注意：</p>
-<ol>
-<li>可批量添加 控制器节点/工作节点，不可同时进行 控制器节点和 工作节点混合添加。</li>
-<li>基于 Kubespray 的 Etcd 和 Controller 部署在相同节点上，扩缩容节点时， Controller 和 ETCD 同时进行。</li>
-<li><p>Controller 添加时，请确保 Controller 节点数为基数，以防发生脑裂问题。</p>
-</li>
-<li><p>集群节点缩容时不可下线 <strong>第一个控制器</strong> 节点，如必须进行此操作，请联系售后工程师。</p>
-</li>
-</ol>
-<h2 id="前提条件"><a name="前提条件" class="anchor-navigation-ex-anchor" href="#前提条件"><i class="fa fa-link" aria-hidden="true"></i></a><a name="前提条件" class="plugin-anchor" href="#前提条件"><i class="fa fa-link" aria-hidden="true"></i></a>前提条件</h2>
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#集群节点扩容"><b></b>集群节点扩容</a></li><ul><li><span class="title-icon "></span><a href="#1-登录平台"><b></b>1. 登录平台</a></li><li><span class="title-icon "></span><a href="#2-添加节点"><b></b>2. 添加节点</a></li></ul></ul></div><a href="#集群节点扩容" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="集群节点扩容"><a name="集群节点扩容" class="anchor-navigation-ex-anchor" href="#集群节点扩容"><i class="fa fa-link" aria-hidden="true"></i></a><a name="集群节点扩容" class="plugin-anchor" href="#集群节点扩容"><i class="fa fa-link" aria-hidden="true"></i></a>集群节点扩容</h1>
+<p>随着业务应用不断增长，集群资源日趋紧张，这时您可以基于 KubeSpray 对集群节点进行扩容。扩容后，应用可以运行在新增的节点上，缓解资源压力。</p>
+<p><strong>前提条件</strong></p>
 <ul>
-<li><p>容器管理平台<a href="https://ndx.gitpages.daocloud.io/engineering/kpanda/zh/07UserGuide/Workloads/CreateDeploymentByImage.html" target="_blank">已创建 Kubernetes 集群</a>，且能够访问集群的 UI 界面。</p>
+<li><p>容器管理平台<a href="https://ndx.gitpages.daocloud.io/engineering/kpanda/zh/07UserGuide/Workloads/CreateDeploymentByImage.html" target="_blank">已创建 Kubernetes 集群</a>，并且能够访问集群的 UI 界面。</p>
 </li>
-<li><p>操作用户已授权为 <code>Cluster Admin</code> 角色 ，详情可参考<a href="https://ndx.gitpages.daocloud.io/engineering/kpanda/zh/07UserGuide/Workloads/CreateDeploymentByImage.html" target="_blank">集群授权</a>。</p>
+<li><p>操作用户已获得 <code>Cluster Admin</code> 角色授权 ，详情可参考<a href="https://ndx.gitpages.daocloud.io/engineering/kpanda/zh/07UserGuide/Workloads/CreateDeploymentByImage.html" target="_blank">集群授权</a>。</p>
 </li>
 </ul>
-<h2 id="添加节点操作步骤"><a name="添加节点操作步骤" class="anchor-navigation-ex-anchor" href="#添加节点操作步骤"><i class="fa fa-link" aria-hidden="true"></i></a><a name="添加节点操作步骤" class="plugin-anchor" href="#添加节点操作步骤"><i class="fa fa-link" aria-hidden="true"></i></a>添加节点操作步骤</h2>
-<h3 id="1-登录平台"><a name="1-登录平台" class="anchor-navigation-ex-anchor" href="#1-登录平台"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1-登录平台" class="plugin-anchor" href="#1-登录平台"><i class="fa fa-link" aria-hidden="true"></i></a>1. 登录平台</h3>
+<p>集群节点扩容的步骤如下：</p>
+<h2 id="1-登录平台"><a name="1-登录平台" class="anchor-navigation-ex-anchor" href="#1-登录平台"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1-登录平台" class="plugin-anchor" href="#1-登录平台"><i class="fa fa-link" aria-hidden="true"></i></a>1. 登录平台</h2>
 <p><code>Cluster Admin</code> 用户根据下表的信息成功登录后，点击左上角的<code>集群列表</code>进入<code>集群列表</code>页面。</p>
 <table>
 <thead>
@@ -699,7 +715,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="2-节点添加"><a name="2-节点添加" class="anchor-navigation-ex-anchor" href="#2-节点添加"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2-节点添加" class="plugin-anchor" href="#2-节点添加"><i class="fa fa-link" aria-hidden="true"></i></a>2. 节点添加</h3>
+<p><img src="imgs/add-node-1.png" alt="进入集群列表页面"></p>
+<h2 id="2-添加节点"><a name="2-添加节点" class="anchor-navigation-ex-anchor" href="#2-添加节点"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2-添加节点" class="plugin-anchor" href="#2-添加节点"><i class="fa fa-link" aria-hidden="true"></i></a>2. 添加节点</h2>
 <ol>
 <li><p>点击一个集群名称，进入<code>集群详情</code>。</p>
 </li>
@@ -708,30 +725,60 @@
 <li><p>点击右上角<code>加入节点</code></p>
 </li>
 <li><p>按钮，进入节点添加页面。</p>
-<p><img src="../../Users/daiqiuping/Library/Application Support/typora-user-images/image-20220623101238409.png" alt="image-20220623101238409"></p>
+<p><img src="imgs/add-node-2.png" alt="添加节点"></p>
 </li>
-<li><p>进入节点添加页面，选择”角色类型“，并输入节点名称，节点 IP 信息，可批量输入，请确保输入的 Hostname 和 IP 地址没有冲突。</p>
-<p>| 参数     | 说明                                                         | 举例值       |
-| :------- | :----------------------------------------------------------- | :----------- |
-| 角色类型 | 【类型】必填 <br>【含义】选择添加节点的角色类型，可添加角色有”控制器节点“、”工作节点“，可批量添加相同角色节点<br>如添加控制器节点，默认添加节点上会启用一个 ETCD | 工作节点     |
-| 节点名称 | 【类型】必填 <br>【含义】节点的 Hostname ，输入前请确认 Hostname 的正确性 | Node01       |
-| IP 地址  | 【类型】必填 <br>【含义】节点的 IP 地址                    | 10.6.124.110 |</p>
+<li><p>进入节点添加页面，选择“角色类型”，输入节点名称和节点 IP 信息。可以批量输入。需要确保输入的 Hostname 和 IP 地址没有冲突。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">举例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">角色类型</td>
+<td style="text-align:left">【类型】必填 <br>【含义】选择添加节点的角色类型，可以添加的角色有“控制器节点”、“工作节点”。可以批量添加相同的角色节点。<br>如添加控制器节点，默认会在添加的节点上启用一个 etcd。</td>
+<td style="text-align:left">工作节点</td>
+</tr>
+<tr>
+<td style="text-align:left">节点名称</td>
+<td style="text-align:left">【类型】必填 <br>【含义】节点的 Hostname ，输入前请确认 Hostname 是否正确。</td>
+<td style="text-align:left">Node01</td>
+</tr>
+<tr>
+<td style="text-align:left">IP 地址</td>
+<td style="text-align:left">【类型】必填 <br>【含义】节点的 IP 地址。</td>
+<td style="text-align:left">10.6.124.110</td>
+</tr>
+</tbody>
+</table>
 <ol>
 <li><p>输入上述信息后，点击 <code>验证</code>后开始进行节点检测，主要检测项如下：</p>
 <ol>
-<li>IP 联通性，自动检测 节点 IP 是否联通</li>
-<li>HostName 一致性，检测输入的 HostName 同节点配置的是一致的</li>
-<li>OS 兼容性，检测节点的 OS 是否同安装的 k8s 版本是否兼容</li>
-<li>NTP 时间同步，检测节点事件同 NTP 时间是否同步</li>
+<li>IP 联通性：自动检测节点 IP 是否联通。</li>
+<li>HostName 一致性：检测输入的 HostName 同节点配置是否一致。</li>
+<li>OS 兼容性：检测节点的 OS 和所安装的 k8s 版本是否兼容。</li>
+<li>NTP 时间同步：检测节点事件同 NTP 时间是否同步。</li>
 </ol>
 </li>
-<li><p>如上述检测项都已通过，节点会自动添加至集群，整个添加过程约 20 分钟，请耐心等待，如需要查看具体 节点添加过程及日志，请查看 <a href>Recently Operations</a></p>
+<li><p>如上述检测项都已通过，节点会自动添加至集群。整个添加过程大约需要 20 分钟，请耐心等待。如需要查看具体节点添加过程及日志，请查看 <a href>Recently Operations</a>。 </p>
 </li>
 </ol>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>可以批量添加控制器节点或工作节点，但不能同时添加控制器节点和工作节点。</li>
+<li>基于 Kubespray 的 etcd 和 Controller 部署在相同节点上。扩缩容节点时， Controller 和 etcd 同时进行。</li>
+<li><p>添加 Controller 添加时，需要确保 Controller 节点数为奇数，以防发生脑裂问题。</p>
+</li>
+<li><p>集群节点缩容时不可下线<strong>第一个控制器</strong> 节点。如果必须执行此操作，请联系售后工程师。</p>
 </li>
 </ol>
 <footer class="page-footer"><span class="copyright">Copyright © daocloud.io 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2022-07-13 03:48:52
+2022-07-20 02:55:20
 </span></footer></body></html>
                                 
                                 </section>
@@ -775,7 +822,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"集群节点扩容","level":"2.4.2.1","depth":3,"next":{"title":"集群节点缩容","level":"2.4.2.2","depth":3,"path":"03userguide/nodes/delete.md","ref":"03userguide/nodes/delete.md","articles":[]},"previous":{"title":"节点管理","level":"2.4.2","depth":2,"path":"03userguide/nodes/README.md","ref":"03userguide/nodes/README.md","articles":[{"title":"集群节点扩容","level":"2.4.2.1","depth":3,"path":"03userguide/nodes/create.md","ref":"03userguide/nodes/create.md","articles":[]},{"title":"集群节点缩容","level":"2.4.2.2","depth":3,"path":"03userguide/nodes/delete.md","ref":"03userguide/nodes/delete.md","articles":[]},{"title":"节点污点管理","level":"2.4.2.3","depth":3,"path":"03userguide/nodes/taints.md","ref":"03userguide/nodes/taints.md","articles":[]},{"title":"节点标签管理","level":"2.4.2.4","depth":3,"path":"03userguide/nodes/labels.md","ref":"03userguide/nodes/labels.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"zh","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"03userguide/nodes/create.md","mtime":"2022-07-13T03:48:52.621Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2022-07-13T03:49:15.693Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"集群节点扩容","level":"2.4.2.1","depth":3,"next":{"title":"集群节点缩容","level":"2.4.2.2","depth":3,"path":"03userguide/nodes/delete.md","ref":"03userguide/nodes/delete.md","articles":[]},"previous":{"title":"节点管理","level":"2.4.2","depth":2,"path":"03userguide/nodes/README.md","ref":"03userguide/nodes/README.md","articles":[{"title":"集群节点扩容","level":"2.4.2.1","depth":3,"path":"03userguide/nodes/create.md","ref":"03userguide/nodes/create.md","articles":[]},{"title":"集群节点缩容","level":"2.4.2.2","depth":3,"path":"03userguide/nodes/delete.md","ref":"03userguide/nodes/delete.md","articles":[]},{"title":"节点污点管理","level":"2.4.2.3","depth":3,"path":"03userguide/nodes/taints.md","ref":"03userguide/nodes/taints.md","articles":[]},{"title":"节点标签管理","level":"2.4.2.4","depth":3,"path":"03userguide/nodes/labels.md","ref":"03userguide/nodes/labels.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"zh","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"03userguide/nodes/create.md","mtime":"2022-07-20T02:55:20.630Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-07-20T02:55:42.052Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>
