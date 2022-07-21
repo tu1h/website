@@ -1,9 +1,9 @@
 
 <!DOCTYPE HTML>
-<html lang="en" >
+<html lang="zh" >
     <head>
         <meta charset="UTF-8">
-        <title>Remove Node · 容器管理文档站</title>
+        <title>Nvidia GPU Device Plugin · 容器管理文档站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.5">
@@ -88,10 +88,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="taints.html" />
+    <link rel="next" href="network.html" />
     
     
-    <link rel="prev" href="create.html" />
+    <link rel="prev" href="contour.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="輸入並搜尋" />
 </div>
 
             
@@ -125,7 +125,7 @@
                 <a href="../../">
             
                     
-                    Introduction
+                    简介
             
                 </a>
             
@@ -154,9 +154,22 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="../../00Releases/0.1.md">
+        <li class="chapter " data-level="2.1.1" data-path="../../00Releases/0.0.8.html">
             
-                <span>
+                <a href="../../00Releases/0.0.8.html">
+            
+                    
+                    Release 0.0.8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../00Releases/0.0.6.html">
+            
+                <a href="../../00Releases/0.0.6.html">
             
                     
                     Release 0.0.6
@@ -177,7 +190,7 @@
                 <a href="../../01Intro/">
             
                     
-                    Introduction
+                    产品介绍
             
                 </a>
             
@@ -191,7 +204,7 @@
                 <a href="../../01Intro/features.html">
             
                     
-                    Features
+                    功能总览
             
                 </a>
             
@@ -204,7 +217,7 @@
                 <a href="../../01Intro/scenarios.html">
             
                     
-                    Applicable Scenarios
+                    适用场景
             
                 </a>
             
@@ -217,7 +230,7 @@
                 <a href="../../01Intro/terms.html">
             
                     
-                    Terms
+                    常见术语
             
                 </a>
             
@@ -235,7 +248,7 @@
                 <a href="../../02install/">
             
                     
-                    Get Started
+                    快速入门
             
                 </a>
             
@@ -244,25 +257,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.3.1" data-path="../../02install/checkbefore.html">
-            
-                <a href="../../02install/checkbefore.html">
-            
-                    
-                    Pre-install Preparation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3.2" data-path="../../02install/install.html">
+        <li class="chapter " data-level="2.3.1" data-path="../../02install/install.html">
             
                 <a href="../../02install/install.html">
             
                     
-                    How to Install
+                    安装 Kubean
             
                 </a>
             
@@ -270,12 +270,25 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.3" data-path="../../02install/checkafter.html">
+        <li class="chapter " data-level="2.3.2" data-path="../../02install/mngcheckbefore.html">
             
-                <a href="../../02install/checkafter.html">
+                <a href="../../02install/mngcheckbefore.html">
             
                     
-                    Post-install Check
+                    管理集群创建前检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../02install/workloadcheckbefore.html">
+            
+                <a href="../../02install/workloadcheckbefore.html">
+            
+                    
+                    工作集群创建前检查
             
                 </a>
             
@@ -293,7 +306,7 @@
                 <a href="../">
             
                     
-                    User Guide
+                    用户指南
             
                 </a>
             
@@ -307,7 +320,7 @@
                 <a href="../clusters/">
             
                     
-                    Cluster Management
+                    集群管理
             
                 </a>
             
@@ -321,7 +334,7 @@
                 <a href="../clusters/description.html">
             
                     
-                    Notes
+                    集群参数说明
             
                 </a>
             
@@ -334,7 +347,7 @@
                 <a href="../clusters/create-standard.html">
             
                     
-                    Create Standard Cluster
+                    创建管理集群
             
                 </a>
             
@@ -347,7 +360,7 @@
                 <a href="../clusters/create-resilient.html">
             
                     
-                    Create Resilient Cluster
+                    创建工作集群
             
                 </a>
             
@@ -360,7 +373,7 @@
                 <a href="../clusters/upgrade.html">
             
                     
-                    Upgrade Cluster
+                    升级集群
             
                 </a>
             
@@ -368,25 +381,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.5" data-path="../clusters/extend.html">
-            
-                <a href="../clusters/extend.html">
-            
-                    
-                    Extend Cluster
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4.1.6" data-path="../clusters/delete.html">
+        <li class="chapter " data-level="2.4.1.5" data-path="../clusters/delete.html">
             
                 <a href="../clusters/delete.html">
             
                     
-                    Remove Cluster
+                    删除集群
             
                 </a>
             
@@ -394,12 +394,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.7" data-path="../clusters/cloudshell.html">
+        <li class="chapter " data-level="2.4.1.6" data-path="../clusters/cloudshell.html">
             
                 <a href="../clusters/cloudshell.html">
             
                     
-                    Access by CloudShell
+                    通过 CloudShell 访问集群
             
                 </a>
             
@@ -407,12 +407,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.8" data-path="../clusters/updatecert.html">
+        <li class="chapter " data-level="2.4.1.7" data-path="../clusters/updatecert.html">
             
                 <a href="../clusters/updatecert.html">
             
                     
-                    Upgrade Certificate
+                    更新集群证书
             
                 </a>
             
@@ -425,12 +425,83 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.2" data-path="./">
+        <li class="chapter " data-level="2.4.2" data-path="../nodes/">
+            
+                <a href="../nodes/">
+            
+                    
+                    节点管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.2.1" data-path="../nodes/create.html">
+            
+                <a href="../nodes/create.html">
+            
+                    
+                    集群节点扩容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.2" data-path="../nodes/delete.html">
+            
+                <a href="../nodes/delete.html">
+            
+                    
+                    集群节点缩容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.3" data-path="../nodes/taints.html">
+            
+                <a href="../nodes/taints.html">
+            
+                    
+                    节点污点管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.4" data-path="../nodes/labels.html">
+            
+                <a href="../nodes/labels.html">
+            
+                    
+                    节点标签管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="./">
             
                 <a href="./">
             
                     
-                    Node Management
+                    支持的插件
             
                 </a>
             
@@ -439,12 +510,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.4.2.1" data-path="create.html">
+        <li class="chapter " data-level="2.4.3.1" data-path="localpathprovisioner.html">
             
-                <a href="create.html">
+                <a href="localpathprovisioner.html">
             
                     
-                    Add Node
+                    Local Path Provisioner
             
                 </a>
             
@@ -452,12 +523,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.4.2.2" data-path="delete.html">
+        <li class="chapter " data-level="2.4.3.2" data-path="hwameistor.html">
             
-                <a href="delete.html">
+                <a href="hwameistor.html">
             
                     
-                    Remove Node
+                    Hwameistor
             
                 </a>
             
@@ -465,12 +536,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.2.3" data-path="taints.html">
+        <li class="chapter " data-level="2.4.3.3" data-path="metalb.html">
             
-                <a href="taints.html">
+                <a href="metalb.html">
             
                     
-                    Node Taint
+                    MetaLB
             
                 </a>
             
@@ -478,12 +549,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.2.4" data-path="labels.html">
+        <li class="chapter " data-level="2.4.3.4" data-path="metricserver.html">
             
-                <a href="labels.html">
+                <a href="metricserver.html">
             
                     
-                    Node Label
+                    Metrics Server
             
                 </a>
             
@@ -491,31 +562,12 @@
             
         </li>
     
-
-            </ul>
+        <li class="chapter " data-level="2.4.3.5" data-path="nginxingress.html">
             
-        </li>
-    
-        <li class="chapter " data-level="2.4.3" data-path="../components/">
-            
-                <a href="../components/">
+                <a href="nginxingress.html">
             
                     
-                    Interface Management
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.4.3.1" data-path="../components/cri.html">
-            
-                <a href="../components/cri.html">
-            
-                    
-                    CRI
+                    Ngnix Ingress
             
                 </a>
             
@@ -523,12 +575,51 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.3.2" data-path="../components/network.html">
+        <li class="chapter " data-level="2.4.3.6" data-path="certmanager.html">
             
-                <a href="../components/network.html">
+                <a href="certmanager.html">
             
                     
-                    Network Interface
+                    Cert Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.7" data-path="contour.html">
+            
+                <a href="contour.html">
+            
+                    
+                    Contour
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4.3.8" data-path="nvidia.html">
+            
+                <a href="nvidia.html">
+            
+                    
+                    Nvidia GPU Device Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.9" data-path="network.html">
+            
+                <a href="network.html">
+            
+                    
+                    网络插件
             
                 </a>
             
@@ -546,7 +637,7 @@
                 <a href="../availability.html">
             
                     
-                    Component Availability
+                    集群组件高可用
             
                 </a>
             
@@ -559,7 +650,7 @@
                 <a href="../log.html">
             
                     
-                    Log Management
+                    安装/运维日志
             
                 </a>
             
@@ -572,7 +663,7 @@
                 <a href="../audit.html">
             
                     
-                    Audit
+                    审计日志
             
                 </a>
             
@@ -590,7 +681,7 @@
                 <a href="../../04API/">
             
                     
-                    API Documentation
+                    API 文档
             
                 </a>
             
@@ -603,7 +694,7 @@
                 <a href="../../05FAQs/">
             
                     
-                    FAQ
+                    常见问题
             
                 </a>
             
@@ -616,7 +707,7 @@
                 <a href="../../06Troubleshooting/">
             
                     
-                    Troubleshooting
+                    故障排查
             
                 </a>
             
@@ -631,7 +722,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            本書使用 HonKit 釋出
         </a>
     </li>
 </ul>
@@ -654,7 +745,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Remove Node</a>
+        <a href="../.." >Nvidia GPU Device Plugin</a>
     </h1>
 </div>
 
@@ -669,8 +760,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#delete-node"><b></b>Delete Node</a></li></ul></div><a href="#delete-node" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="delete-node"><a name="delete-node" class="anchor-navigation-ex-anchor" href="#delete-node"><i class="fa fa-link" aria-hidden="true"></i></a><a name="delete-node" class="plugin-anchor" href="#delete-node"><i class="fa fa-link" aria-hidden="true"></i></a>Delete Node</h1>
-<footer class="page-footer"><span class="copyright">Copyright © daocloud.io 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+                                <html><head></head><body><footer class="page-footer"><span class="copyright">Copyright © daocloud.io 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
 2022-07-21 10:43:39
 </span></footer></body></html>
                                 
@@ -699,12 +789,12 @@
 
             
                 
-                <a href="create.html" class="navigation navigation-prev " aria-label="Previous page: Add Node">
+                <a href="contour.html" class="navigation navigation-prev " aria-label="Previous page: Contour">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="taints.html" class="navigation navigation-next " aria-label="Next page: Node Taint">
+                <a href="network.html" class="navigation navigation-next " aria-label="Next page: 网络插件">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -715,7 +805,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Remove Node","level":"2.4.2.2","depth":3,"next":{"title":"Node Taint","level":"2.4.2.3","depth":3,"path":"03userguide/nodes/taints.md","ref":"03userguide/nodes/taints.md","articles":[]},"previous":{"title":"Add Node","level":"2.4.2.1","depth":3,"path":"03userguide/nodes/create.md","ref":"03userguide/nodes/create.md","articles":[]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"en","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"03userguide/nodes/delete.md","mtime":"2022-07-21T10:43:39.096Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-07-21T10:43:57.620Z"},"basePath":"../..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Nvidia GPU Device Plugin","level":"2.4.3.8","depth":3,"next":{"title":"网络插件","level":"2.4.3.9","depth":3,"path":"03userguide/components/network.md","ref":"03userguide/components/network.md","articles":[]},"previous":{"title":"Contour","level":"2.4.3.7","depth":3,"path":"03userguide/components/contour.md","ref":"03userguide/components/contour.md","articles":[]},"dir":"neutral"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"zh","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"03userguide/components/nvidia.md","mtime":"2022-07-21T10:43:39.096Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-07-21T10:43:57.620Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>
