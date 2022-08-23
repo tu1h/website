@@ -758,10 +758,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#kubean"><b></b>KuBean</a></li></ul></div><a href="#kubean" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="kubean"><a name="kubean" class="anchor-navigation-ex-anchor" href="#kubean"><i class="fa fa-link" aria-hidden="true"></i></a><a name="kubean" class="plugin-anchor" href="#kubean"><i class="fa fa-link" aria-hidden="true"></i></a>KuBean</h1>
-<p>KuBean 是一款自动安装生产环境就绪的 Kubernetes 集群的工具。</p>
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#什么是-kubean"><b></b>什么是 Kubean?</a></li></ul></div><a href="#什么是-kubean" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="什么是-kubean"><a name="什么是-kubean" class="anchor-navigation-ex-anchor" href="#什么是-kubean"><i class="fa fa-link" aria-hidden="true"></i></a><a name="什么是-kubean" class="plugin-anchor" href="#什么是-kubean"><i class="fa fa-link" aria-hidden="true"></i></a>什么是 Kubean?</h1>
+<p>KuBean 是基于 Kubespray 技术实现的一个自动安装及管理 Kubernetes 集群的管理组件。KuBean 可用于在混合云、公有云、私有云、裸金属环境中部署及管理集群。</p>
+<p>管理集群 ，主要用于子集群的全生命周期管理（包括子集群的创建，更新，升级等)。管理集群本身为 Kubernetes 集群，并同时对工作集群的生命周期进行管理，如何创建 管理集群 可参考 <a href="03userguide/clusters/createDKG.md">创建管理集群</a>。</p>
+<p>工作集群主要用于承载业务应用容器，工作集群可以基于管理集群进行 创建及管理，管理集群可以基于不同的基础设施（公有云，私有云，裸金属）进行创建，如何创建工作集群 可参考 <a href="03userguide/clusters/createDKE.md">创建工作集群</a>。</p>
+<h4 id="集群全生命周期管理"><a name="集群全生命周期管理" class="anchor-navigation-ex-anchor" href="#集群全生命周期管理"><i class="fa fa-link" aria-hidden="true"></i></a><a name="集群全生命周期管理" class="plugin-anchor" href="#集群全生命周期管理"><i class="fa fa-link" aria-hidden="true"></i></a>集群全生命周期管理</h4>
+<ul>
+<li><p><strong>集群的一键式创建</strong></p>
+<ul>
+<li>集群的快速部创建，快速部署企业级的 Kubernetes 集群，快速搭建企业级容器云台，适配物理机和虚拟机底层环境。</li>
+<li>创建过程中轻松配置网络、存储、日志等参数，轻松配置生产就绪的 Kubernetes 集群。</li>
+</ul>
+<p><strong>集群的生命周期管理</strong></p>
+<ul>
+<li>支持集群的一键式证书升级，一键 Kubernetes 版本版本升级，以及系统组件的统一升级及管理。</li>
+</ul>
+<p><strong>集群的高可用性</strong></p>
+<ul>
+<li>部署的集群支持 控制节点高可用模式，保障业务系统在主机故障下业务不受影响，提高生产环境的稳定性，降低业务中断风</li>
+</ul>
+</li>
+</ul>
+<h4 id="完善的插件机制"><a name="完善的插件机制" class="anchor-navigation-ex-anchor" href="#完善的插件机制"><i class="fa fa-link" aria-hidden="true"></i></a><a name="完善的插件机制" class="plugin-anchor" href="#完善的插件机制"><i class="fa fa-link" aria-hidden="true"></i></a>完善的插件机制</h4>
+<ul>
+<li><p>丰富完善的 Addon 机制，完善容器集群能力，创建集群时可根据不同场景选择性部署需要的插件，目前支持的插件如下：</p>
+<ul>
+<li><p>网络相关组件： Kubeproxy、CoreDNS、Ingress Nginx、MetalLB 、CNI (Calico，Cillium，Multus，Spiderpool，Spiderflat，Macvlan ，Submariner等 )，</p>
+</li>
+<li><p>存储相关组件 ：RBD Provisioner、Local Path Provisioner、CephFS Provisioner、RBD Provisioner，</p>
+</li>
+<li><p>其他组件：Metrics Server、Cert Manager</p>
+</li>
+</ul>
+</li>
+</ul>
 <footer class="page-footer"><span class="copyright">Copyright © daocloud.io 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2022-08-15 09:58:31
+2022-08-23 08:57:43
 </span></footer></body></html>
                                 
                                 </section>
@@ -801,7 +833,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"简介","level":"1.1","depth":1,"next":{"title":"Release Notes","level":"2.1","depth":1,"path":"00Releases/README.md","ref":"00Releases/README.md","articles":[{"title":"Release 0.0.8","level":"2.1.1","depth":2,"path":"00Releases/0.0.8.md","ref":"00Releases/0.0.8.md","articles":[]},{"title":"Release 0.0.6","level":"2.1.2","depth":2,"path":"00Releases/0.0.6.md","ref":"00Releases/0.0.6.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"zh","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"README.md","mtime":"2022-08-15T09:58:31.152Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-15T09:58:46.784Z"},"basePath":".","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"简介","level":"1.1","depth":1,"next":{"title":"Release Notes","level":"2.1","depth":1,"path":"00Releases/README.md","ref":"00Releases/README.md","articles":[{"title":"Release 0.0.8","level":"2.1.1","depth":2,"path":"00Releases/0.0.8.md","ref":"00Releases/0.0.8.md","articles":[]},{"title":"Release 0.0.6","level":"2.1.2","depth":2,"path":"00Releases/0.0.6.md","ref":"00Releases/0.0.6.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"zh","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"README.md","mtime":"2022-08-23T08:57:43.871Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-23T08:57:57.333Z"},"basePath":".","book":{"language":"zh"}});
         });
     </script>
 </div>
