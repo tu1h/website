@@ -88,7 +88,7 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="create-resilient.html" />
+    <link rel="next" href="create-worker-cluster.html" />
     
     
     <link rel="prev" href="description.html" />
@@ -342,9 +342,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.4.1.2" data-path="create-standard.html">
+        <li class="chapter active" data-level="2.4.1.2" data-path="create-control-cluster.html">
             
-                <a href="create-standard.html">
+                <a href="create-control-cluster.html">
             
                     
                     创建管理集群
@@ -355,9 +355,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.1.3" data-path="create-resilient.html">
+        <li class="chapter " data-level="2.4.1.3" data-path="create-worker-cluster.html">
             
-                <a href="create-resilient.html">
+                <a href="create-worker-cluster.html">
             
                     
                     创建工作集群
@@ -760,81 +760,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#创建工作集群"><b></b>创建工作集群</a></li><ul><li><span class="title-icon "></span><a href="#前提条件"><b></b>前提条件</a></li><li><span class="title-icon "></span><a href="#创建步骤"><b></b>创建步骤</a></li><li><span class="title-icon "></span><a href="#完成集群创建"><b></b>完成集群创建</a></li></ul></ul></div><a href="#创建工作集群" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="创建工作集群"><a name="创建工作集群" class="anchor-navigation-ex-anchor" href="#创建工作集群"><i class="fa fa-link" aria-hidden="true"></i></a><a name="创建工作集群" class="plugin-anchor" href="#创建工作集群"><i class="fa fa-link" aria-hidden="true"></i></a>创建工作集群</h1>
-<p>Kubean 可以创建两种类型的集群，分别是标准容器集群和高弹性容器集群。用户可依据业务需要和使用场景进行选择。</p>
-<p>本节介绍如何创建标准容器集群。有关高弹性容器集群的创建，请查看<a href="create-resilient.html">创建管理集群</a>。</p>
-<h2 id="前提条件"><a name="前提条件" class="anchor-navigation-ex-anchor" href="#前提条件"><i class="fa fa-link" aria-hidden="true"></i></a><a name="前提条件" class="plugin-anchor" href="#前提条件"><i class="fa fa-link" aria-hidden="true"></i></a>前提条件</h2>
-<ul>
-<li>请参照<a href="../../02install/checkbefore.html">集群创建前准备</a>完成相应配置。</li>
-</ul>
-<h2 id="创建步骤"><a name="创建步骤" class="anchor-navigation-ex-anchor" href="#创建步骤"><i class="fa fa-link" aria-hidden="true"></i></a><a name="创建步骤" class="plugin-anchor" href="#创建步骤"><i class="fa fa-link" aria-hidden="true"></i></a>创建步骤</h2>
-<h4 id="步骤一：选择集群类型"><a name="步骤一：选择集群类型" class="anchor-navigation-ex-anchor" href="#步骤一：选择集群类型"><i class="fa fa-link" aria-hidden="true"></i></a><a name="步骤一：选择集群类型" class="plugin-anchor" href="#步骤一：选择集群类型"><i class="fa fa-link" aria-hidden="true"></i></a>步骤一：选择集群类型</h4>
-<p><code>NS Editor</code> 用户根据下表的信息成功登录后，在右上角点击<code>集群列表</code>-&gt;<code>创建集群</code>-&gt;<code>部署工作集群</code>。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">说明</th>
-<th style="text-align:left">举例值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">UI 账户和密码</td>
-<td style="text-align:left">【类型】必填<br>【含义】用来登录容器管理平台 Web UI 的管理员账户和密码</td>
-<td style="text-align:left">账户：root<br>密码：<strong>**</strong></td>
-</tr>
-<tr>
-<td style="text-align:left">容器平台的 Web UI 地址</td>
-<td style="text-align:left">【类型】必填<br>【含义】容器管理平台的 Web UI 的 IP 地址</td>
-<td style="text-align:left">10.6.124.110</td>
-</tr>
-</tbody>
-</table>
-<p><img src="imgs/create-cluster.png" alt="选择集群类型"></p>
-<h4 id="步骤二：配置集群基本信息"><a name="步骤二：配置集群基本信息" class="anchor-navigation-ex-anchor" href="#步骤二：配置集群基本信息"><i class="fa fa-link" aria-hidden="true"></i></a><a name="步骤二：配置集群基本信息" class="plugin-anchor" href="#步骤二：配置集群基本信息"><i class="fa fa-link" aria-hidden="true"></i></a>步骤二：配置集群基本信息</h4>
-<p>参照<a href="description#基本信息">集群参数说明—基本信息</a>，输入集群名称、被纳管的集群、容器运行时，Kubernetes 版本等基本信息。</p>
-<h4 id="步骤三：配置节点"><a name="步骤三：配置节点" class="anchor-navigation-ex-anchor" href="#步骤三：配置节点"><i class="fa fa-link" aria-hidden="true"></i></a><a name="步骤三：配置节点" class="plugin-anchor" href="#步骤三：配置节点"><i class="fa fa-link" aria-hidden="true"></i></a>步骤三：配置节点</h4>
-<p>配置节点信息前，需要预先将待添加节点的身份验证信息保持一致。</p>
-<ol>
-<li>参照<a href="description#节点配置">集群参数说明—节点配置</a>，点击<code>新增节点</code>按钮，依次输入主机名称、IP 地址、节点角色等信息。</li>
-<li>选择通过秘钥或用户名/密码，配置节点的身份验证方式。如果选择秘钥认证，支持通过本地上传私钥。</li>
-<li>选择是否启用 NTP 时间同步器，如果选择开启，在 NTP 服务器下拉选项中，选择合适的 NTP 服务器。</li>
-</ol>
-<h4 id="步骤四：配置网络"><a name="步骤四：配置网络" class="anchor-navigation-ex-anchor" href="#步骤四：配置网络"><i class="fa fa-link" aria-hidden="true"></i></a><a name="步骤四：配置网络" class="plugin-anchor" href="#步骤四：配置网络"><i class="fa fa-link" aria-hidden="true"></i></a>步骤四：配置网络</h4>
-<p>您可以根据业务需要配置合适的网络模式。目前容器管理模块支持 Calico、Cillium、Multus（Calico+Spiderpool+Macvlan)、Multus ( Calico+Spiderpoll+Spiderflat)、公有云 CNI 或者 None（系统默认的网络模式）。本节将以 Calico 为例介绍如何进行网络配置。有关网络模式的更多说明，请参阅<a href="description#网络配置">集群参数说明—网络配置</a>。</p>
-<ol>
-<li>参照<a href="description#网络配置">集群参数说明—网络配置</a>，选择网络模式为 <code>Calico</code>。</li>
-<li>配置 Calico 隧道，支持如下四种隧道模式。<ul>
-<li>IPv4 IPIP CrossSubnet</li>
-<li>IPv4 IPIP</li>
-<li>IPv4 VXLAN</li>
-<li>IPv4 VXLAN CrossSubnet</li>
-</ul>
-</li>
-<li>配置 Calico IPtables 后端<ul>
-<li>nft</li>
-<li>auto</li>
-<li>legacy</li>
-</ul>
-</li>
-<li>配置 Pod 和服务的 IP 地址范围。需要注意的是，Pod IP 地址范围一旦确定，在集群创建完成后不可更改。Pod 地址段和 Service 地址段不可重复。更多详情，请参阅 <a href="#">Kubernetes 集群网络规划</a>。</li>
-<li>选择是否启用节点本地 DNS 域名解析服务。</li>
-<li>配置网络模式部署失败的参数。<ul>
-<li>配置网络模式部署失败的参数。</li>
-<li>选择基于 Iptable 或 IPVS 的 kube-proxy 转发模式，有关 Iptables 和 IPVS 的区别，请查阅 <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/" target="_blank">kube-proxy</a>。</li>
-<li>选择是否开启虚拟 IP（VIP）。如果开启，在下面的选项中输入虚拟 IP 的地址，如10.70124.0。</li>
-</ul>
-</li>
-</ol>
-<h4 id="步骤五：配置插件"><a name="步骤五：配置插件" class="anchor-navigation-ex-anchor" href="#步骤五：配置插件"><i class="fa fa-link" aria-hidden="true"></i></a><a name="步骤五：配置插件" class="plugin-anchor" href="#步骤五：配置插件"><i class="fa fa-link" aria-hidden="true"></i></a>步骤五：配置插件</h4>
-<p>容器管理模块为新创建的集群提供了一些常用插件的预置安装，以此进一步扩展集群的能力。您可以在创建集群时，指定集群需要预装的插件。其中 Insight 为系统默认安装的插件，为集群的健康运行状态提供能力扩展。您还可以选择预装 Local Path Provisioner、Hwameistor、Contour 等插件。有关更多详情，请参阅<a href="description#插件配置">集群参数说明—插件配置</a>。</p>
-<h4 id="步骤六：配置高级选项"><a name="步骤六：配置高级选项" class="anchor-navigation-ex-anchor" href="#步骤六：配置高级选项"><i class="fa fa-link" aria-hidden="true"></i></a><a name="步骤六：配置高级选项" class="plugin-anchor" href="#步骤六：配置高级选项"><i class="fa fa-link" aria-hidden="true"></i></a>步骤六：配置高级选项</h4>
-<p>您可以根据业务需要，参照<a href="description#高级配置">集群参数说明—高级配置</a>，配置新建集群的最大 Pod 数等参数。同时也支持通过<code>新增</code>按钮，输入自定义的集群安装参数。</p>
-<h2 id="完成集群创建"><a name="完成集群创建" class="anchor-navigation-ex-anchor" href="#完成集群创建"><i class="fa fa-link" aria-hidden="true"></i></a><a name="完成集群创建" class="plugin-anchor" href="#完成集群创建"><i class="fa fa-link" aria-hidden="true"></i></a>完成集群创建</h2>
-<p>完成上述六个步骤的配置后，系统就会自动开始创建集群。您可以选择留在当前页面等待集群创建完成，在此期间您可以查看集群创建的实时进度。您也可以点击<code>返回集群列表</code>按钮，回到集群列表页面，等待集群创建完成。</p>
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#创建管理集群"><b></b>创建管理集群</a></li></ul></div><a href="#创建管理集群" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="创建管理集群"><a name="创建管理集群" class="anchor-navigation-ex-anchor" href="#创建管理集群"><i class="fa fa-link" aria-hidden="true"></i></a><a name="创建管理集群" class="plugin-anchor" href="#创建管理集群"><i class="fa fa-link" aria-hidden="true"></i></a>创建管理集群</h1>
+<p>Kubean 可以创建两种类型的集群，分别是管理集群和工作集群。用户可依据业务需要和使用场景进行选择。</p>
+<p>本节介绍如何创建管理集群。有关工作集群的创建，请查看<a href="create-worker-cluster.html">创建工作集群</a>。</p>
 <footer class="page-footer"><span class="copyright">Copyright © daocloud.io 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2022-08-23 08:57:43
+2022-08-30 10:14:16
 </span></footer></body></html>
                                 
                                 </section>
@@ -867,7 +797,7 @@
                 </a>
                 
                 
-                <a href="create-resilient.html" class="navigation navigation-next " aria-label="Next page: 创建工作集群">
+                <a href="create-worker-cluster.html" class="navigation navigation-next " aria-label="Next page: 创建工作集群">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -878,7 +808,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"创建管理集群","level":"2.4.1.2","depth":3,"next":{"title":"创建工作集群","level":"2.4.1.3","depth":3,"path":"03userguide/clusters/create-resilient.md","ref":"03userguide/clusters/create-resilient.md","articles":[]},"previous":{"title":"集群参数说明","level":"2.4.1.1","depth":3,"path":"03userguide/clusters/description.md","ref":"03userguide/clusters/description.md","articles":[]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"zh","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"03userguide/clusters/create-standard.md","mtime":"2022-08-23T08:57:43.867Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-23T08:57:57.333Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"创建管理集群","level":"2.4.1.2","depth":3,"next":{"title":"创建工作集群","level":"2.4.1.3","depth":3,"path":"03userguide/clusters/create-worker-cluster.md","ref":"03userguide/clusters/create-worker-cluster.md","articles":[]},"previous":{"title":"集群参数说明","level":"2.4.1.1","depth":3,"path":"03userguide/clusters/description.md","ref":"03userguide/clusters/description.md","articles":[]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"zh","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"03userguide/clusters/create-control-cluster.md","mtime":"2022-08-30T10:14:16.814Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-30T10:14:32.403Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>

@@ -669,9 +669,240 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#how-to-install"><b></b>How to Install</a></li></ul></div><a href="#how-to-install" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="how-to-install"><a name="how-to-install" class="anchor-navigation-ex-anchor" href="#how-to-install"><i class="fa fa-link" aria-hidden="true"></i></a><a name="how-to-install" class="plugin-anchor" href="#how-to-install"><i class="fa fa-link" aria-hidden="true"></i></a>How to Install</h1>
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#offline-install"><b></b>Offline Install</a></li><ul><li><span class="title-icon "></span><a href="#step-1-download-the-package"><b></b>Step 1: Download the package</a></li><li><span class="title-icon "></span><a href="#step-2-import-offline-resources-into-relevant-services"><b></b>Step 2: Import offline resources into relevant services</a></li><ul><li><span class="title-icon "></span><a href="#import-binaries-into-minio"><b></b>Import binaries into MinIO</a></li><li><span class="title-icon "></span><a href="#import-images-into-registry"><b></b>Import images into registry</a></li><li><span class="title-icon "></span><a href="#import-os-packages-into-minio"><b></b>Import OS packages into MinIO</a></li></ul><li><span class="title-icon "></span><a href="#step-3-build-offline-source-and-config-files"><b></b>Step 3: Build offline source and config files</a></li><ul><li><span class="title-icon "></span><a href="#build-iso-image-source"><b></b>Build ISO image source</a></li><li><span class="title-icon "></span><a href="#build-extra-software-source"><b></b>Build extra software source</a></li><li><span class="title-icon "></span><a href="#create-source-config-file-with-kubeanclusterops-and-playbook"><b></b>Create source config file with KubeanClusterOps and playbook</a></li></ul><li><span class="title-icon "></span><a href="#step-4-config-before-cluster-deployment"><b></b>Step 4: Config before cluster deployment</a></li></ul></ul></div><a href="#offline-install" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="offline-install"><a name="offline-install" class="anchor-navigation-ex-anchor" href="#offline-install"><i class="fa fa-link" aria-hidden="true"></i></a><a name="offline-install" class="plugin-anchor" href="#offline-install"><i class="fa fa-link" aria-hidden="true"></i></a>Offline Install</h1>
+<p>Installing Kubean with offline resources can be divided into four steps. Before start the installation, you need to prepare the following resources/tools:</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li><a href="https://docs.min.io/docs/minio-quickstart-guide.html" target="_blank"><code>MinIO</code></a> to provide storage service</li>
+<li><a href="https://hub.docker.com/_/registry" target="_blank"><code>Docker</code></a>/<a href="https://goharbor.io/docs/2.0.0/install-config/" target="_blank"><code>Harbor</code></a> registry to provide registry service</li>
+<li><a href="https://github.com/containers/skopeo/blob/main/install.md" target="_blank"><code>skopeo</code></a> to import images</li>
+<li><a href="https://docs.min.io/docs/minio-client-quickstart-guide.html" target="_blank"><code>minio client</code></a> to import binary files</li>
+</ul>
+<h2 id="step-1-download-the-package"><a name="step-1-download-the-package" class="anchor-navigation-ex-anchor" href="#step-1-download-the-package"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-1-download-the-package" class="plugin-anchor" href="#step-1-download-the-package"><i class="fa fa-link" aria-hidden="true"></i></a>Step 1: Download the package</h2>
+<p>You can download Kubean offline resources at <a href="https://github.com/kubean-io/kubean/releases" target="_blank">Github Releases</a>.</p>
+<pre><code class="lang-bash">├── files.list                                  <span class="hljs-comment"># list of files</span>
+├── files-<span class="hljs-variable">${tag}</span>.tar.gz                         <span class="hljs-comment"># compressed file package, incl. import scripts</span>
+├── images.list                                 <span class="hljs-comment"># list of images</span>
+├── images-<span class="hljs-variable">${tag}</span>.tar.gz                        <span class="hljs-comment"># compressed images, incl. import scripts</span>
+└── os-pkgs-<span class="hljs-variable">${linux_distribution}</span>-<span class="hljs-variable">${tag}</span>.tar.gz <span class="hljs-comment"># packages of relevant systems, incl. import scripts</span>
+</code></pre>
+<h2 id="step-2-import-offline-resources-into-relevant-services"><a name="step-2-import-offline-resources-into-relevant-services" class="anchor-navigation-ex-anchor" href="#step-2-import-offline-resources-into-relevant-services"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-2-import-offline-resources-into-relevant-services" class="plugin-anchor" href="#step-2-import-offline-resources-into-relevant-services"><i class="fa fa-link" aria-hidden="true"></i></a>Step 2: Import offline resources into relevant services</h2>
+<h3 id="import-binaries-into-minio"><a name="import-binaries-into-minio" class="anchor-navigation-ex-anchor" href="#import-binaries-into-minio"><i class="fa fa-link" aria-hidden="true"></i></a><a name="import-binaries-into-minio" class="plugin-anchor" href="#import-binaries-into-minio"><i class="fa fa-link" aria-hidden="true"></i></a>Import binaries into MinIO</h3>
+<ol>
+<li><p>Unzip <code>files-${tag}.tar.gz</code></p>
+<p>``` bash
+files/
+├── import_files.sh       # script for importing files to minio
+└── offline-files.tar.gz  # compressed binaries</p>
+</li>
+<li><p>Import binaries into MinIO with this command:</p>
+<pre><code class="lang-bash">$ MINIO_USER=<span class="hljs-variable">${username}</span> MINIO_PASS=<span class="hljs-variable">${password}</span> ./import_files.sh <span class="hljs-variable">${minio_address}</span>
+</code></pre>
+<blockquote>
+<p><code>minio_address</code> is the address of <code>minio API Server</code>; the port usually is 9000. For example:<code>http://1.2.3.4:9000</code>.</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="import-images-into-registry"><a name="import-images-into-registry" class="anchor-navigation-ex-anchor" href="#import-images-into-registry"><i class="fa fa-link" aria-hidden="true"></i></a><a name="import-images-into-registry" class="plugin-anchor" href="#import-images-into-registry"><i class="fa fa-link" aria-hidden="true"></i></a>Import images into registry</h3>
+<ol>
+<li><p>Unzip <code>images-${tag}.tar.gz</code></p>
+<pre><code class="lang-bash">images/
+├── import_images.sh       <span class="hljs-comment"># script for importing images into registry</span>
+└── offline-images.tar.gz  <span class="hljs-comment"># compressed images</span>
+</code></pre>
+</li>
+<li><p>Import the images into docker/harbor registry with this command:</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># 1. password-free mode</span>
+$ DEST_TLS_VERIFY=<span class="hljs-literal">false</span> ./import_images.sh <span class="hljs-variable">${registry_address}</span>
+
+<span class="hljs-comment"># 2. password-required mode</span>
+$ DEST_USER=<span class="hljs-variable">${username}</span> DEST_PASS=<span class="hljs-variable">${password}</span> ./import_images.sh <span class="hljs-variable">${registry_address}</span>
+</code></pre>
+</li>
+<li><p>If <code>DEST_TLS_VERIFY=false</code>, use not-secure HTTP mode to upload images</p>
+</li>
+<li>If the registry requires a user name and the password, you need to set <code>DEST_USER</code> and <code>DEST_PASS</code></li>
+<li><code>registry_address</code> is the address of the registry, e.g., <code>1.2.3.4:5000</code></li>
+</ol>
+<h3 id="import-os-packages-into-minio"><a name="import-os-packages-into-minio" class="anchor-navigation-ex-anchor" href="#import-os-packages-into-minio"><i class="fa fa-link" aria-hidden="true"></i></a><a name="import-os-packages-into-minio" class="plugin-anchor" href="#import-os-packages-into-minio"><i class="fa fa-link" aria-hidden="true"></i></a>Import OS packages into MinIO</h3>
+<blockquote>
+<p>Currently only OS Packages of Centos are available.</p>
+</blockquote>
+<ol>
+<li><p>Unzip <code>os-pkgs-${linux_distribution}-${tag}.tar.gz</code></p>
+<pre><code class="lang-bash">os-pkgs
+├── import_ospkgs.sh              <span class="hljs-comment"># script for importing os packages to MinIO</span>
+├── os-pkgs-v0.1.1-amd64.tar.gz   <span class="hljs-comment"># os packages of amd64</span>
+├── os-pkgs-v0.1.1-arm64.tar.gz   <span class="hljs-comment"># os packages of arm64</span>
+└── os-pkgs-v0.1.1.sha256sum.txt  <span class="hljs-comment"># sha256sum of os packages</span>
+</code></pre>
+</li>
+<li><p>Import os packages to MinIO with this command:</p>
+<pre><code class="lang-bash">$ MINIO_USER=<span class="hljs-variable">${username}</span> MINIO_PASS=<span class="hljs-variable">${password}</span> ./import_ospkgs.sh <span class="hljs-variable">${MinIO_address}</span> os-pkgs-<span class="hljs-variable">${tag}</span>-<span class="hljs-variable">${arch}</span>.tar.gz
+</code></pre>
+</li>
+</ol>
+<h2 id="step-3-build-offline-source-and-config-files"><a name="step-3-build-offline-source-and-config-files" class="anchor-navigation-ex-anchor" href="#step-3-build-offline-source-and-config-files"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-3-build-offline-source-and-config-files" class="plugin-anchor" href="#step-3-build-offline-source-and-config-files"><i class="fa fa-link" aria-hidden="true"></i></a>Step 3: Build offline source and config files</h2>
+<p>You need to build the ISO image source and extras software source.</p>
+<h3 id="build-iso-image-source"><a name="build-iso-image-source" class="anchor-navigation-ex-anchor" href="#build-iso-image-source"><i class="fa fa-link" aria-hidden="true"></i></a><a name="build-iso-image-source" class="plugin-anchor" href="#build-iso-image-source"><i class="fa fa-link" aria-hidden="true"></i></a>Build ISO image source</h3>
+<p>OS Packages are used mainly for providing installation dependencies for docker-ce. In real offline deployment, you may also need other packages. Therefore, you need to build a local ISO image source.</p>
+<blockquote>
+<p>You need to download in advance the ISO image designed for your host. Currently only the ISO image source of Centos is available.</p>
+</blockquote>
+<p>After the ISO image is downloaded, you need to mount the image and create repo config files. Use  <code>artifacts/gen_repo_conf.sh</code> script to run the following commands:</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># basic syntax</span>
+$ ./gen_repo_conf.sh --iso-mode <span class="hljs-variable">${linux_distribution}</span> <span class="hljs-variable">${iso_image_file}</span>
+
+<span class="hljs-comment"># run the script to create the ISO image source</span>
+$ ./gen_repo_conf.sh --iso-mode centos CentOS-7-x86_64-Everything-2207-02.iso
+<span class="hljs-comment"># check ISO image mount</span>
+$ df -h | grep mnt
+/dev/loop0               9.6G  9.6G     0 100% /mnt/centos-iso
+<span class="hljs-comment"># check config of the ISO image source</span>
+$ cat /etc/yum.repos.d/Kubean-ISO.repo
+[kubean-iso]
+name=Kubean ISO Repo
+baseurl=file:///mnt/centos-iso
+enabled=1
+gpgcheck=0
+sslverify=0
+</code></pre>
+<p>If you want to use an online source:</p>
+<ol>
+<li><p>Import the ISO image source to <code>minio server</code> with this script: <code>artifacts/import_iso.sh</code> and the following commands:</p>
+<pre><code class="lang-bash"> MINIO_USER=<span class="hljs-variable">${username}</span> MINIO_PASS=<span class="hljs-variable">${password}</span> ./import_iso.sh <span class="hljs-variable">${minio_address}</span> Centos-XXXX.ISO
+</code></pre>
+</li>
+<li><p>Create <code>/etc/yum.repos.d/centos-iso-online.repo</code> file in the host:</p>
+<pre><code class="lang-bash"> [kubean-iso-online]
+ name=Kubean ISO Repo Online
+ <span class="hljs-comment"># change `${minio_address}` to the address of minio API Server</span>
+ baseurl=<span class="hljs-variable">${minio_address}</span>/kubean/centos-iso/<span class="hljs-variable">$releasever</span>/os/<span class="hljs-variable">$basearch</span>
+ enabled=1
+ gpgcheck=0
+ sslverify=0
+</code></pre>
+</li>
+</ol>
+<h3 id="build-extra-software-source"><a name="build-extra-software-source" class="anchor-navigation-ex-anchor" href="#build-extra-software-source"><i class="fa fa-link" aria-hidden="true"></i></a><a name="build-extra-software-source" class="plugin-anchor" href="#build-extra-software-source"><i class="fa fa-link" aria-hidden="true"></i></a>Build extra software source</h3>
+<blockquote>
+<p>Currently only the Centos distribution is available.</p>
+</blockquote>
+<p>When installing a Kubernetes cluster, you also need to install some extra software, such as <code>container-selinux</code>. These software are provided in the os packages. After the packages are imported into MinIO, you need to create config files for the extra repo on each node.</p>
+<p>To do this, use <code>artifacts/gen_repo_conf.sh</code> script to run the following commands:</p>
+<pre><code class="lang-bash">$ ./gen_repo_conf.sh --url-mode <span class="hljs-variable">${linux_distribution}</span> <span class="hljs-variable">${repo_base_url}</span>
+
+<span class="hljs-comment"># run the script to create URL source config file</span>
+<span class="hljs-comment"># you need to change `${minio_address}` to the actual address of `minio API Server`</span>
+$ ./gen_repo_conf.sh --url-mode centos <span class="hljs-variable">${minio_address}</span>/centos/\<span class="hljs-variable">$releasever</span>/os/\<span class="hljs-variable">$basearch</span>
+<span class="hljs-comment"># check URL source config file</span>
+$ cat /etc/yum.repos.d/Kubean-URL.repo
+[kubean-extra]
+name=Kubean Extra Repo
+<span class="hljs-comment"># If `repo_base_url` contains `$`, you need to escape it as `\$`</span>
+baseurl=http://10.20.30.40:9000/centos/<span class="hljs-variable">$releasever</span>/os/<span class="hljs-variable">$basearch</span>
+enabled=1
+gpgcheck=0
+sslverify=0
+</code></pre>
+<h3 id="create-source-config-file-with-kubeanclusterops-and-playbook"><a name="create-source-config-file-with-kubeanclusterops-and-playbook" class="anchor-navigation-ex-anchor" href="#create-source-config-file-with-kubeanclusterops-and-playbook"><i class="fa fa-link" aria-hidden="true"></i></a><a name="create-source-config-file-with-kubeanclusterops-and-playbook" class="plugin-anchor" href="#create-source-config-file-with-kubeanclusterops-and-playbook"><i class="fa fa-link" aria-hidden="true"></i></a>Create source config file with KubeanClusterOps and playbook</h3>
+<blockquote>
+<p>Currently you can only add Centos yum repo</p>
+</blockquote>
+<p>Creating the source involves all nodes in the cluster, making it troublesome to use scripts. A more convenient solution is provided with playbook:</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> <span class="hljs-string">kubeanclusterops.kubean.io/v1alpha1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">KuBeanClusterOps</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">cluster-ops-01</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">kuBeanCluster:</span> <span class="hljs-string">sample</span>
+  <span class="hljs-attr">image:</span> <span class="hljs-string">ghcr.io/kubean-io/kubean/spray-job:latest</span>
+  <span class="hljs-attr">backoffLimit:</span> <span class="hljs-number">0</span>
+  <span class="hljs-attr">actionType:</span> <span class="hljs-string">playbook</span>
+  <span class="hljs-attr">action:</span> <span class="hljs-string">cluster.yml</span>
+  <span class="hljs-attr">preHook:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">actionType:</span> <span class="hljs-string">playbook</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">ping.yml</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">actionType:</span> <span class="hljs-string">playbook</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">enable-repo.yml</span>  <span class="hljs-comment"># before deploying the cluster, run the palybook of the enable-repo to assign url source config for each node</span>
+      <span class="hljs-attr">extraArgs:</span> <span class="hljs-string">|
+        -e &quot;{yum_repo_url_list: [&apos;http://10.20.30.40:9000/centos/\$releasever/os/\$basearch&apos;]}&quot;
+</span>    <span class="hljs-bullet">-</span> <span class="hljs-attr">actionType:</span> <span class="hljs-string">playbook</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">disable-firewalld.yml</span>
+  <span class="hljs-attr">postHook:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">actionType:</span> <span class="hljs-string">playbook</span>
+      <span class="hljs-attr">action:</span> <span class="hljs-string">cluster-info.yml</span>
+</code></pre>
+<h2 id="step-4-config-before-cluster-deployment"><a name="step-4-config-before-cluster-deployment" class="anchor-navigation-ex-anchor" href="#step-4-config-before-cluster-deployment"><i class="fa fa-link" aria-hidden="true"></i></a><a name="step-4-config-before-cluster-deployment" class="plugin-anchor" href="#step-4-config-before-cluster-deployment"><i class="fa fa-link" aria-hidden="true"></i></a>Step 4: Config before cluster deployment</h2>
+<p>As for offline configuration, refer to <a href="https://github.com/kubernetes-sigs/kubespray" target="_blank"><code>kubespray&apos;s config file</code></a>: <code>kubespray/inventory/sample/group_vars/all/offline.yml</code>.</p>
+<p>In real configuration, you need to adjust the following file according to the real scenarios, and replace <code>{{ registry_address }}</code> 和 <code>{{ minio_address }}</code> in particular. Then, you should add the new configuration into <code>artifacts/offlineDemo/vars-conf-cm.yml</code>and change the cluster node IP and user name &amp; password in <code>artifacts/offlineDemo/hosts-conf-cm.yml</code>. Finally, launch <code>kubeanClusterOps</code> to install a Kubernetes cluster with the command <code>kubectl apply -f artifacts/offlineDemo</code>.</p>
+<pre><code class="lang-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-comment">## global offline config</span>
+<span class="hljs-comment">### config address of the private registry</span>
+<span class="hljs-attr">registry_host:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ registry_address }}</span>&quot;</span>
+
+<span class="hljs-comment">### config address of the binaries</span>
+<span class="hljs-attr">files_repo:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ minio_address }}</span>&quot;</span>
+
+<span class="hljs-comment">### if use CentOS / RedHat / AlmaLinux / Fedora, you need to config the address of yum source file</span>
+<span class="hljs-attr">yum_repo:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ minio_address }}</span>&quot;</span>
+
+<span class="hljs-comment">### if use Debian, config:</span>
+<span class="hljs-attr">debian_repo:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ minio_address }}</span>&quot;</span>
+
+<span class="hljs-comment">### if use Ubuntu, config:</span>
+<span class="hljs-attr">ubuntu_repo:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ minio_address }}</span>&quot;</span>
+
+<span class="hljs-comment">### if containerd uses not-secure HTTP mode that requires no authentication, config:</span>
+<span class="hljs-attr">containerd_insecure_registries:</span>
+  <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ registry_address }}</span>&quot;</span><span class="hljs-string">:</span> <span class="hljs-string">&quot;http://<span class="hljs-template-variable">{{ registry_address }}</span>&quot;</span>
+
+<span class="hljs-comment">### if docker uses not-secure HTTP mode that requires no authentication, config:</span>
+<span class="hljs-attr">docker_insecure_registries:</span>
+  <span class="hljs-bullet">-</span> {{ <span class="hljs-string">registry_address</span> }}
+
+<span class="hljs-comment">## Kubernetes components</span>
+<span class="hljs-attr">kubeadm_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/storage.googleapis.com/kubernetes-release/release/<span class="hljs-template-variable">{{ kubeadm_version }}</span>/bin/linux/<span class="hljs-template-variable">{{ image_arch }}</span>/kubeadm&quot;</span>
+<span class="hljs-attr">kubectl_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/storage.googleapis.com/kubernetes-release/release/<span class="hljs-template-variable">{{ kube_version }}</span>/bin/linux/<span class="hljs-template-variable">{{ image_arch }}</span>/kubectl&quot;</span>
+<span class="hljs-attr">kubelet_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/storage.googleapis.com/kubernetes-release/release/<span class="hljs-template-variable">{{ kube_version }}</span>/bin/linux/<span class="hljs-template-variable">{{ image_arch }}</span>/kubelet&quot;</span>
+
+<span class="hljs-comment">## CNI Plugins</span>
+<span class="hljs-attr">cni_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/containernetworking/plugins/releases/download/<span class="hljs-template-variable">{{ cni_version }}</span>/cni-plugins-linux-<span class="hljs-template-variable">{{ image_arch }}</span>-<span class="hljs-template-variable">{{ cni_version }}</span>.tgz&quot;</span>
+
+<span class="hljs-comment">## cri-tools</span>
+<span class="hljs-attr">crictl_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/kubernetes-sigs/cri-tools/releases/download/<span class="hljs-template-variable">{{ crictl_version }}</span>/crictl-<span class="hljs-template-variable">{{ crictl_version }}</span>-<span class="hljs-template-variable">{{ ansible_system | lower }}</span>-<span class="hljs-template-variable">{{ image_arch }}</span>.tar.gz&quot;</span>
+
+<span class="hljs-comment">## [Optional] etcd: only if you **DON&apos;T** use etcd_deployment=host</span>
+<span class="hljs-attr">etcd_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/etcd-io/etcd/releases/download/<span class="hljs-template-variable">{{ etcd_version }}</span>/etcd-<span class="hljs-template-variable">{{ etcd_version }}</span>-linux-<span class="hljs-template-variable">{{ image_arch }}</span>.tar.gz&quot;</span>
+
+<span class="hljs-comment"># [Optional] Calico: If using Calico network plugin</span>
+<span class="hljs-attr">calicoctl_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/projectcalico/calico/releases/download/<span class="hljs-template-variable">{{ calico_ctl_version }}</span>/calicoctl-linux-<span class="hljs-template-variable">{{ image_arch }}</span>&quot;</span>
+<span class="hljs-attr">calicoctl_alternate_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/projectcalico/calicoctl/releases/download/<span class="hljs-template-variable">{{ calico_ctl_version }}</span>/calicoctl-linux-<span class="hljs-template-variable">{{ image_arch }}</span>&quot;</span>
+<span class="hljs-comment"># [Optional] Calico with kdd: If using Calico network plugin with kdd datastore</span>
+<span class="hljs-attr">calico_crds_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/projectcalico/calico/archive/<span class="hljs-template-variable">{{ calico_version }}</span>.tar.gz&quot;</span>
+
+<span class="hljs-comment"># [Optional] Flannel: If using Falnnel network plugin</span>
+<span class="hljs-attr">flannel_cni_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/kubernetes/flannel/<span class="hljs-template-variable">{{ flannel_cni_version }}</span>/flannel-<span class="hljs-template-variable">{{ image_arch }}</span>&quot;</span>
+
+<span class="hljs-comment"># [Optional] helm: only if you set helm_enabled: true</span>
+<span class="hljs-attr">helm_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/get.helm.sh/helm-<span class="hljs-template-variable">{{ helm_version }}</span>-linux-<span class="hljs-template-variable">{{ image_arch }}</span>.tar.gz&quot;</span>
+
+<span class="hljs-comment"># [Optional] crun: only if you set crun_enabled: true</span>
+<span class="hljs-attr">crun_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/containers/crun/releases/download/<span class="hljs-template-variable">{{ crun_version }}</span>/crun-<span class="hljs-template-variable">{{ crun_version }}</span>-linux-<span class="hljs-template-variable">{{ image_arch }}</span>&quot;</span>
+
+<span class="hljs-comment"># [Optional] kata: only if you set kata_containers_enabled: true</span>
+<span class="hljs-attr">kata_containers_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/kata-containers/kata-containers/releases/download/<span class="hljs-template-variable">{{ kata_containers_version }}</span>/kata-static-<span class="hljs-template-variable">{{ kata_containers_version }}</span>-<span class="hljs-template-variable">{{ ansible_architecture }}</span>.tar.xz&quot;</span>
+
+<span class="hljs-comment"># [Optional] cri-dockerd: only if you set container_manager: docker</span>
+<span class="hljs-attr">cri_dockerd_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/Mirantis/cri-dockerd/releases/download/v<span class="hljs-template-variable">{{ cri_dockerd_version }}</span>/cri-dockerd-<span class="hljs-template-variable">{{ cri_dockerd_version }}</span>.<span class="hljs-template-variable">{{ image_arch }}</span>.tgz&quot;</span>
+
+<span class="hljs-comment"># [Optional] runc,containerd: only if you set container_runtime: containerd</span>
+<span class="hljs-attr">runc_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/opencontainers/runc/releases/download/<span class="hljs-template-variable">{{ runc_version }}</span>/runc.<span class="hljs-template-variable">{{ image_arch }}</span>&quot;</span>
+<span class="hljs-attr">containerd_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/containerd/containerd/releases/download/v<span class="hljs-template-variable">{{ containerd_version }}</span>/containerd-<span class="hljs-template-variable">{{ containerd_version }}</span>-linux-<span class="hljs-template-variable">{{ image_arch }}</span>.tar.gz&quot;</span>
+<span class="hljs-attr">nerdctl_download_url:</span> <span class="hljs-string">&quot;<span class="hljs-template-variable">{{ files_repo }}</span>/github.com/containerd/nerdctl/releases/download/v<span class="hljs-template-variable">{{ nerdctl_version }}</span>/nerdctl-<span class="hljs-template-variable">{{ nerdctl_version }}</span>-<span class="hljs-template-variable">{{ ansible_system | lower }}</span>-<span class="hljs-template-variable">{{ image_arch }}</span>.tar.gz&quot;</span>
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright © daocloud.io 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2022-08-23 08:57:43
+2022-08-30 10:14:16
 </span></footer></body></html>
                                 
                                 </section>
@@ -715,7 +946,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to Install","level":"2.3.2","depth":2,"next":{"title":"Post-install Check","level":"2.3.3","depth":2,"path":"02install/checkafter.md","ref":"02install/checkafter.md","articles":[]},"previous":{"title":"Pre-install Preparation","level":"2.3.1","depth":2,"path":"02install/checkbefore.md","ref":"02install/checkbefore.md","articles":[]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"en","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"02install/install.md","mtime":"2022-08-23T08:57:43.867Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-23T08:57:57.333Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"How to Install","level":"2.3.2","depth":2,"next":{"title":"Post-install Check","level":"2.3.3","depth":2,"path":"02install/checkafter.md","ref":"02install/checkafter.md","articles":[]},"previous":{"title":"Pre-install Preparation","level":"2.3.1","depth":2,"path":"02install/checkbefore.md","ref":"02install/checkbefore.md","articles":[]},"dir":"ltr"},"config":{"plugins":["tbfed-pagefooter","hide-element","expandable-chapters-small","anchors","anchor-navigation-ex","flexible-alerts","code","todo","donate","highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy daocloud.io 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"title":"","button":"反馈","wechat":"https://i.postimg.cc/tCPTP7gC/QRCode.png","alipay":"","wechatText":"微信扫码","alipayText":"支付宝打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false,"associatedWithSummary":false,"mode":"float","showGoTop":true,"printLog":false,"multipleH1":false,"float":{"floatIcon":"fa fa-navicon","showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"},"pageTop":{"showLevelIcon":false,"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right"}},"expandable-chapters-small":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Michael","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"容器管理文档站","language":"en","gitbook":"*","description":"囊括所有面向用户的文档"},"file":{"path":"02install/install.md","mtime":"2022-08-30T10:14:16.810Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-30T10:14:32.403Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
